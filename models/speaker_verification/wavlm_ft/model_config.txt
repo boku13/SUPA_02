@@ -1,0 +1,5 @@
+Model: wavlm_base_plus
+Embedding dimension: 768
+Number of speakers: 100
+Max files per speaker: 50
+Final validation accuracy: 0.0000

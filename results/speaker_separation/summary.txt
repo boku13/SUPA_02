@@ -1,0 +1,7 @@
+Average metrics:
+SDR: 5.7064
+SIR: 22.1352
+SAR: 6.0921
+PESQ: 1.3747
+pretrained_speaker_acc: 0.4200
+finetuned_speaker_acc: 0.4200

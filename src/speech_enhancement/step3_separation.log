@@ -1,0 +1,1620 @@
+INFO:speechbrain.utils.quirks:Applied quirks (see `speechbrain.utils.quirks`): [disable_jit_profiling, allow_tf32]
+INFO:speechbrain.utils.quirks:Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+INFO:utils:Using device: cuda
+INFO:__main__:Output will be saved to results/speech_enhancement/separated_test
+INFO:__main__:Loading SepFormer model...
+INFO:speechbrain.utils.fetching:Fetch hyperparams.yaml: Fetching from HuggingFace Hub 'speechbrain/sepformer-whamr' if not cached
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\speechbrain\utils\fetching.py:151: UserWarning: Using SYMLINK strategy on Windows for fetching potentially requires elevated privileges and is not recommended. See `LocalStrategy` documentation.
+  warnings.warn(
+INFO:speechbrain.utils.fetching:Fetch custom.py: Fetching from HuggingFace Hub 'speechbrain/sepformer-whamr' if not cached
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\speechbrain\utils\parameter_transfer.py:234: UserWarning: Requested Pretrainer collection using symlinks on Windows. This might not work; see `LocalStrategy` documentation. Consider unsetting `collect_in` in Pretrainer to avoid symlinking altogether.
+  warnings.warn(
+INFO:speechbrain.utils.fetching:Fetch masknet.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-whamr' if not cached
+INFO:speechbrain.utils.fetching:Fetch encoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-whamr' if not cached
+INFO:speechbrain.utils.fetching:Fetch decoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-whamr' if not cached
+INFO:speechbrain.utils.parameter_transfer:Loading pretrained files for: masknet, encoder, decoder
+INFO:__main__:Model loaded successfully
+INFO:__main__:Loading metadata from data/vox2/mixtures_test/metadata.csv
+INFO:__main__:Found 200 mixtures in metadata file
+Separating mixtures:   0%|          | 0/200 [00:00<?, ?it/s]INFO:__main__:Processing mixture: mix_00000
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00000.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00000\mix_00000_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00000\mix_00000_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00000\mix_00000_8k_source2.wav
+Separating mixtures:   0%|          | 1/200 [00:01<03:43,  1.12s/it]INFO:__main__:Processing mixture: mix_00001
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00001.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00001\mix_00001_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00001\mix_00001_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00001\mix_00001_8k_source2.wav
+Separating mixtures:   1%|1         | 2/200 [00:01<02:00,  1.64it/s]INFO:__main__:Processing mixture: mix_00002
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00002.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00002\mix_00002_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00002\mix_00002_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00002\mix_00002_8k_source2.wav
+Separating mixtures:   2%|1         | 3/200 [00:01<01:30,  2.18it/s]INFO:__main__:Processing mixture: mix_00003
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00003.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00003\mix_00003_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00003\mix_00003_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00003\mix_00003_8k_source2.wav
+Separating mixtures:   2%|2         | 4/200 [00:01<01:14,  2.62it/s]INFO:__main__:Processing mixture: mix_00004
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00004.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00004\mix_00004_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00004\mix_00004_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00004\mix_00004_8k_source2.wav
+Separating mixtures:   2%|2         | 5/200 [00:02<01:06,  2.93it/s]INFO:__main__:Processing mixture: mix_00005
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00005.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00005\mix_00005_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00005\mix_00005_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00005\mix_00005_8k_source2.wav
+Separating mixtures:   3%|3         | 6/200 [00:02<01:20,  2.42it/s]INFO:__main__:Processing mixture: mix_00006
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00006.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00006\mix_00006_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00006\mix_00006_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00006\mix_00006_8k_source2.wav
+Separating mixtures:   4%|3         | 7/200 [00:03<01:23,  2.31it/s]INFO:__main__:Processing mixture: mix_00007
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00007.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00007\mix_00007_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00007\mix_00007_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00007\mix_00007_8k_source2.wav
+Separating mixtures:   4%|4         | 8/200 [00:03<01:12,  2.66it/s]INFO:__main__:Processing mixture: mix_00008
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00008.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00008\mix_00008_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00008\mix_00008_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00008\mix_00008_8k_source2.wav
+Separating mixtures:   4%|4         | 9/200 [00:03<01:05,  2.92it/s]INFO:__main__:Processing mixture: mix_00009
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00009.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00009\mix_00009_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00009\mix_00009_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00009\mix_00009_8k_source2.wav
+Separating mixtures:   5%|5         | 10/200 [00:04<01:14,  2.56it/s]INFO:__main__:Processing mixture: mix_00010
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00010.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00010\mix_00010_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00010\mix_00010_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00010\mix_00010_8k_source2.wav
+Separating mixtures:   6%|5         | 11/200 [00:04<01:10,  2.69it/s]INFO:__main__:Processing mixture: mix_00011
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00011.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00011\mix_00011_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00011\mix_00011_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00011\mix_00011_8k_source2.wav
+Separating mixtures:   6%|6         | 12/200 [00:04<01:03,  2.94it/s]INFO:__main__:Processing mixture: mix_00012
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00012.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00012\mix_00012_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00012\mix_00012_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00012\mix_00012_8k_source2.wav
+Separating mixtures:   6%|6         | 13/200 [00:05<01:01,  3.02it/s]INFO:__main__:Processing mixture: mix_00013
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00013.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00013\mix_00013_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00013\mix_00013_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00013\mix_00013_8k_source2.wav
+Separating mixtures:   7%|7         | 14/200 [00:05<00:56,  3.27it/s]INFO:__main__:Processing mixture: mix_00014
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00014.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00014\mix_00014_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00014\mix_00014_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00014\mix_00014_8k_source2.wav
+Separating mixtures:   8%|7         | 15/200 [00:05<00:54,  3.39it/s]INFO:__main__:Processing mixture: mix_00015
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00015.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00015\mix_00015_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00015\mix_00015_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00015\mix_00015_8k_source2.wav
+Separating mixtures:   8%|8         | 16/200 [00:06<01:04,  2.85it/s]INFO:__main__:Processing mixture: mix_00016
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00016.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00016\mix_00016_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00016\mix_00016_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00016\mix_00016_8k_source2.wav
+Separating mixtures:   8%|8         | 17/200 [00:06<00:58,  3.12it/s]INFO:__main__:Processing mixture: mix_00017
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00017.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00017\mix_00017_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00017\mix_00017_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00017\mix_00017_8k_source2.wav
+Separating mixtures:   9%|9         | 18/200 [00:06<00:57,  3.16it/s]INFO:__main__:Processing mixture: mix_00018
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00018.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00018\mix_00018_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00018\mix_00018_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00018\mix_00018_8k_source2.wav
+Separating mixtures:  10%|9         | 19/200 [00:06<00:54,  3.32it/s]INFO:__main__:Processing mixture: mix_00019
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00019.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00019\mix_00019_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00019\mix_00019_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00019\mix_00019_8k_source2.wav
+Separating mixtures:  10%|#         | 20/200 [00:07<00:58,  3.07it/s]INFO:__main__:Processing mixture: mix_00020
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00020.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00020\mix_00020_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00020\mix_00020_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00020\mix_00020_8k_source2.wav
+Separating mixtures:  10%|#         | 21/200 [00:07<00:54,  3.30it/s]INFO:__main__:Processing mixture: mix_00021
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00021.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00021\mix_00021_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00021\mix_00021_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00021\mix_00021_8k_source2.wav
+Separating mixtures:  11%|#1        | 22/200 [00:07<00:50,  3.51it/s]INFO:__main__:Processing mixture: mix_00022
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00022.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00022\mix_00022_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00022\mix_00022_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00022\mix_00022_8k_source2.wav
+Separating mixtures:  12%|#1        | 23/200 [00:08<00:50,  3.52it/s]INFO:__main__:Processing mixture: mix_00023
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00023.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00023\mix_00023_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00023\mix_00023_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00023\mix_00023_8k_source2.wav
+Separating mixtures:  12%|#2        | 24/200 [00:08<00:57,  3.05it/s]INFO:__main__:Processing mixture: mix_00024
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00024.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00024\mix_00024_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00024\mix_00024_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00024\mix_00024_8k_source2.wav
+Separating mixtures:  12%|#2        | 25/200 [00:08<00:56,  3.08it/s]INFO:__main__:Processing mixture: mix_00025
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00025.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00025\mix_00025_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00025\mix_00025_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00025\mix_00025_8k_source2.wav
+Separating mixtures:  13%|#3        | 26/200 [00:09<00:53,  3.24it/s]INFO:__main__:Processing mixture: mix_00026
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00026.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00026\mix_00026_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00026\mix_00026_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00026\mix_00026_8k_source2.wav
+Separating mixtures:  14%|#3        | 27/200 [00:09<00:53,  3.24it/s]INFO:__main__:Processing mixture: mix_00027
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00027.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00027\mix_00027_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00027\mix_00027_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00027\mix_00027_8k_source2.wav
+Separating mixtures:  14%|#4        | 28/200 [00:09<00:50,  3.42it/s]INFO:__main__:Processing mixture: mix_00028
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00028.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00028\mix_00028_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00028\mix_00028_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00028\mix_00028_8k_source2.wav
+Separating mixtures:  14%|#4        | 29/200 [00:09<00:48,  3.56it/s]INFO:__main__:Processing mixture: mix_00029
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00029.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00029\mix_00029_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00029\mix_00029_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00029\mix_00029_8k_source2.wav
+Separating mixtures:  15%|#5        | 30/200 [00:10<00:46,  3.68it/s]INFO:__main__:Processing mixture: mix_00030
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00030.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00030\mix_00030_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00030\mix_00030_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00030\mix_00030_8k_source2.wav
+Separating mixtures:  16%|#5        | 31/200 [00:10<00:47,  3.58it/s]INFO:__main__:Processing mixture: mix_00031
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00031.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00031\mix_00031_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00031\mix_00031_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00031\mix_00031_8k_source2.wav
+Separating mixtures:  16%|#6        | 32/200 [00:10<00:51,  3.27it/s]INFO:__main__:Processing mixture: mix_00032
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00032.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00032\mix_00032_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00032\mix_00032_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00032\mix_00032_8k_source2.wav
+Separating mixtures:  16%|#6        | 33/200 [00:11<00:51,  3.22it/s]INFO:__main__:Processing mixture: mix_00033
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00033.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00033\mix_00033_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00033\mix_00033_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00033\mix_00033_8k_source2.wav
+Separating mixtures:  17%|#7        | 34/200 [00:11<00:48,  3.44it/s]INFO:__main__:Processing mixture: mix_00034
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00034.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00034\mix_00034_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00034\mix_00034_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00034\mix_00034_8k_source2.wav
+Separating mixtures:  18%|#7        | 35/200 [00:11<00:48,  3.39it/s]INFO:__main__:Processing mixture: mix_00035
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00035.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00035\mix_00035_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00035\mix_00035_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00035\mix_00035_8k_source2.wav
+Separating mixtures:  18%|#8        | 36/200 [00:11<00:46,  3.55it/s]INFO:__main__:Processing mixture: mix_00036
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00036.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00036\mix_00036_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00036\mix_00036_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00036\mix_00036_8k_source2.wav
+Separating mixtures:  18%|#8        | 37/200 [00:12<00:43,  3.71it/s]INFO:__main__:Processing mixture: mix_00037
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00037.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00037\mix_00037_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00037\mix_00037_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00037\mix_00037_8k_source2.wav
+Separating mixtures:  19%|#9        | 38/200 [00:12<00:43,  3.73it/s]INFO:__main__:Processing mixture: mix_00038
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00038.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00038\mix_00038_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00038\mix_00038_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00038\mix_00038_8k_source2.wav
+Separating mixtures:  20%|#9        | 39/200 [00:12<00:44,  3.66it/s]INFO:__main__:Processing mixture: mix_00039
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00039.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00039\mix_00039_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00039\mix_00039_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00039\mix_00039_8k_source2.wav
+Separating mixtures:  20%|##        | 40/200 [00:13<00:45,  3.54it/s]INFO:__main__:Processing mixture: mix_00040
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00040.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00040\mix_00040_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00040\mix_00040_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00040\mix_00040_8k_source2.wav
+Separating mixtures:  20%|##        | 41/200 [00:13<00:53,  2.96it/s]INFO:__main__:Processing mixture: mix_00041
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00041.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00041\mix_00041_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00041\mix_00041_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00041\mix_00041_8k_source2.wav
+Separating mixtures:  21%|##1       | 42/200 [00:13<00:51,  3.08it/s]INFO:__main__:Processing mixture: mix_00042
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00042.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00042\mix_00042_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00042\mix_00042_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00042\mix_00042_8k_source2.wav
+Separating mixtures:  22%|##1       | 43/200 [00:14<00:51,  3.08it/s]INFO:__main__:Processing mixture: mix_00043
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00043.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00043\mix_00043_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00043\mix_00043_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00043\mix_00043_8k_source2.wav
+Separating mixtures:  22%|##2       | 44/200 [00:14<00:48,  3.23it/s]INFO:__main__:Processing mixture: mix_00044
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00044.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00044\mix_00044_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00044\mix_00044_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00044\mix_00044_8k_source2.wav
+Separating mixtures:  22%|##2       | 45/200 [00:14<00:47,  3.29it/s]INFO:__main__:Processing mixture: mix_00045
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00045.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00045\mix_00045_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00045\mix_00045_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00045\mix_00045_8k_source2.wav
+Separating mixtures:  23%|##3       | 46/200 [00:14<00:43,  3.50it/s]INFO:__main__:Processing mixture: mix_00046
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00046.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00046\mix_00046_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00046\mix_00046_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00046\mix_00046_8k_source2.wav
+Separating mixtures:  24%|##3       | 47/200 [00:15<00:42,  3.64it/s]INFO:__main__:Processing mixture: mix_00047
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00047.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00047\mix_00047_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00047\mix_00047_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00047\mix_00047_8k_source2.wav
+Separating mixtures:  24%|##4       | 48/200 [00:15<00:40,  3.73it/s]INFO:__main__:Processing mixture: mix_00048
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00048.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00048\mix_00048_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00048\mix_00048_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00048\mix_00048_8k_source2.wav
+Separating mixtures:  24%|##4       | 49/200 [00:15<00:40,  3.75it/s]INFO:__main__:Processing mixture: mix_00049
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00049.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00049\mix_00049_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00049\mix_00049_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00049\mix_00049_8k_source2.wav
+Separating mixtures:  25%|##5       | 50/200 [00:16<00:43,  3.48it/s]INFO:__main__:Processing mixture: mix_00050
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00050.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00050\mix_00050_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00050\mix_00050_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00050\mix_00050_8k_source2.wav
+Separating mixtures:  26%|##5       | 51/200 [00:16<00:41,  3.61it/s]INFO:__main__:Processing mixture: mix_00051
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00051.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00051\mix_00051_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00051\mix_00051_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00051\mix_00051_8k_source2.wav
+Separating mixtures:  26%|##6       | 52/200 [00:16<00:43,  3.43it/s]INFO:__main__:Processing mixture: mix_00052
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00052.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00052\mix_00052_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00052\mix_00052_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00052\mix_00052_8k_source2.wav
+Separating mixtures:  26%|##6       | 53/200 [00:16<00:42,  3.49it/s]INFO:__main__:Processing mixture: mix_00053
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00053.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00053\mix_00053_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00053\mix_00053_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00053\mix_00053_8k_source2.wav
+Separating mixtures:  27%|##7       | 54/200 [00:17<00:40,  3.59it/s]INFO:__main__:Processing mixture: mix_00054
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00054.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00054\mix_00054_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00054\mix_00054_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00054\mix_00054_8k_source2.wav
+Separating mixtures:  28%|##7       | 55/200 [00:17<00:38,  3.72it/s]INFO:__main__:Processing mixture: mix_00055
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00055.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00055\mix_00055_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00055\mix_00055_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00055\mix_00055_8k_source2.wav
+Separating mixtures:  28%|##8       | 56/200 [00:17<00:39,  3.65it/s]INFO:__main__:Processing mixture: mix_00056
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00056.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00056\mix_00056_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00056\mix_00056_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00056\mix_00056_8k_source2.wav
+Separating mixtures:  28%|##8       | 57/200 [00:17<00:39,  3.67it/s]INFO:__main__:Processing mixture: mix_00057
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00057.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00057\mix_00057_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00057\mix_00057_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00057\mix_00057_8k_source2.wav
+Separating mixtures:  29%|##9       | 58/200 [00:18<00:37,  3.76it/s]INFO:__main__:Processing mixture: mix_00058
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00058.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00058\mix_00058_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00058\mix_00058_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00058\mix_00058_8k_source2.wav
+Separating mixtures:  30%|##9       | 59/200 [00:18<00:36,  3.82it/s]INFO:__main__:Processing mixture: mix_00059
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00059.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00059\mix_00059_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00059\mix_00059_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00059\mix_00059_8k_source2.wav
+Separating mixtures:  30%|###       | 60/200 [00:18<00:37,  3.70it/s]INFO:__main__:Processing mixture: mix_00060
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00060.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00060\mix_00060_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00060\mix_00060_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00060\mix_00060_8k_source2.wav
+Separating mixtures:  30%|###       | 61/200 [00:19<00:38,  3.66it/s]INFO:__main__:Processing mixture: mix_00061
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00061.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00061\mix_00061_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00061\mix_00061_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00061\mix_00061_8k_source2.wav
+Separating mixtures:  31%|###1      | 62/200 [00:19<00:42,  3.26it/s]INFO:__main__:Processing mixture: mix_00062
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00062.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00062\mix_00062_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00062\mix_00062_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00062\mix_00062_8k_source2.wav
+Separating mixtures:  32%|###1      | 63/200 [00:20<01:00,  2.26it/s]INFO:__main__:Processing mixture: mix_00063
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00063.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00063\mix_00063_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00063\mix_00063_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00063\mix_00063_8k_source2.wav
+Separating mixtures:  32%|###2      | 64/200 [00:20<00:52,  2.58it/s]INFO:__main__:Processing mixture: mix_00064
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00064.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00064\mix_00064_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00064\mix_00064_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00064\mix_00064_8k_source2.wav
+Separating mixtures:  32%|###2      | 65/200 [00:20<00:46,  2.91it/s]INFO:__main__:Processing mixture: mix_00065
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00065.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00065\mix_00065_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00065\mix_00065_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00065\mix_00065_8k_source2.wav
+Separating mixtures:  33%|###3      | 66/200 [00:20<00:42,  3.17it/s]INFO:__main__:Processing mixture: mix_00066
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00066.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00066\mix_00066_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00066\mix_00066_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00066\mix_00066_8k_source2.wav
+Separating mixtures:  34%|###3      | 67/200 [00:21<00:43,  3.06it/s]INFO:__main__:Processing mixture: mix_00067
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00067.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00067\mix_00067_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00067\mix_00067_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00067\mix_00067_8k_source2.wav
+Separating mixtures:  34%|###4      | 68/200 [00:21<00:45,  2.90it/s]INFO:__main__:Processing mixture: mix_00068
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00068.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00068\mix_00068_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00068\mix_00068_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00068\mix_00068_8k_source2.wav
+Separating mixtures:  34%|###4      | 69/200 [00:21<00:42,  3.08it/s]INFO:__main__:Processing mixture: mix_00069
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00069.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00069\mix_00069_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00069\mix_00069_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00069\mix_00069_8k_source2.wav
+Separating mixtures:  35%|###5      | 70/200 [00:22<00:39,  3.28it/s]INFO:__main__:Processing mixture: mix_00070
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00070.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00070\mix_00070_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00070\mix_00070_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00070\mix_00070_8k_source2.wav
+Separating mixtures:  36%|###5      | 71/200 [00:22<00:36,  3.50it/s]INFO:__main__:Processing mixture: mix_00071
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00071.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00071\mix_00071_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00071\mix_00071_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00071\mix_00071_8k_source2.wav
+Separating mixtures:  36%|###6      | 72/200 [00:22<00:37,  3.44it/s]INFO:__main__:Processing mixture: mix_00072
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00072.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00072\mix_00072_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00072\mix_00072_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00072\mix_00072_8k_source2.wav
+Separating mixtures:  36%|###6      | 73/200 [00:23<00:35,  3.60it/s]INFO:__main__:Processing mixture: mix_00073
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00073.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00073\mix_00073_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00073\mix_00073_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00073\mix_00073_8k_source2.wav
+Separating mixtures:  37%|###7      | 74/200 [00:23<00:39,  3.17it/s]INFO:__main__:Processing mixture: mix_00074
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00074.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00074\mix_00074_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00074\mix_00074_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00074\mix_00074_8k_source2.wav
+Separating mixtures:  38%|###7      | 75/200 [00:23<00:39,  3.20it/s]INFO:__main__:Processing mixture: mix_00075
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00075.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00075\mix_00075_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00075\mix_00075_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00075\mix_00075_8k_source2.wav
+Separating mixtures:  38%|###8      | 76/200 [00:23<00:36,  3.39it/s]INFO:__main__:Processing mixture: mix_00076
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00076.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00076\mix_00076_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00076\mix_00076_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00076\mix_00076_8k_source2.wav
+Separating mixtures:  38%|###8      | 77/200 [00:24<00:34,  3.56it/s]INFO:__main__:Processing mixture: mix_00077
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00077.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00077\mix_00077_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00077\mix_00077_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00077\mix_00077_8k_source2.wav
+Separating mixtures:  39%|###9      | 78/200 [00:24<00:47,  2.55it/s]INFO:__main__:Processing mixture: mix_00078
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00078.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00078\mix_00078_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00078\mix_00078_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00078\mix_00078_8k_source2.wav
+Separating mixtures:  40%|###9      | 79/200 [00:25<00:47,  2.54it/s]INFO:__main__:Processing mixture: mix_00079
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00079.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00079\mix_00079_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00079\mix_00079_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00079\mix_00079_8k_source2.wav
+Separating mixtures:  40%|####      | 80/200 [00:25<00:42,  2.81it/s]INFO:__main__:Processing mixture: mix_00080
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00080.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00080\mix_00080_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00080\mix_00080_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00080\mix_00080_8k_source2.wav
+Separating mixtures:  40%|####      | 81/200 [00:25<00:38,  3.09it/s]INFO:__main__:Processing mixture: mix_00081
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00081.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00081\mix_00081_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00081\mix_00081_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00081\mix_00081_8k_source2.wav
+Separating mixtures:  41%|####1     | 82/200 [00:26<00:35,  3.28it/s]INFO:__main__:Processing mixture: mix_00082
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00082.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00082\mix_00082_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00082\mix_00082_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00082\mix_00082_8k_source2.wav
+Separating mixtures:  42%|####1     | 83/200 [00:26<00:33,  3.48it/s]INFO:__main__:Processing mixture: mix_00083
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00083.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00083\mix_00083_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00083\mix_00083_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00083\mix_00083_8k_source2.wav
+Separating mixtures:  42%|####2     | 84/200 [00:26<00:33,  3.44it/s]INFO:__main__:Processing mixture: mix_00084
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00084.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00084\mix_00084_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00084\mix_00084_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00084\mix_00084_8k_source2.wav
+Separating mixtures:  42%|####2     | 85/200 [00:26<00:32,  3.51it/s]INFO:__main__:Processing mixture: mix_00085
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00085.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00085\mix_00085_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00085\mix_00085_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00085\mix_00085_8k_source2.wav
+Separating mixtures:  43%|####3     | 86/200 [00:27<00:34,  3.33it/s]INFO:__main__:Processing mixture: mix_00086
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00086.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00086\mix_00086_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00086\mix_00086_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00086\mix_00086_8k_source2.wav
+Separating mixtures:  44%|####3     | 87/200 [00:27<00:38,  2.97it/s]INFO:__main__:Processing mixture: mix_00087
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00087.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00087\mix_00087_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00087\mix_00087_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00087\mix_00087_8k_source2.wav
+Separating mixtures:  44%|####4     | 88/200 [00:28<00:45,  2.45it/s]INFO:__main__:Processing mixture: mix_00088
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00088.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00088\mix_00088_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00088\mix_00088_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00088\mix_00088_8k_source2.wav
+Separating mixtures:  44%|####4     | 89/200 [00:28<00:40,  2.74it/s]INFO:__main__:Processing mixture: mix_00089
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00089.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00089\mix_00089_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00089\mix_00089_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00089\mix_00089_8k_source2.wav
+Separating mixtures:  45%|####5     | 90/200 [00:28<00:40,  2.73it/s]INFO:__main__:Processing mixture: mix_00090
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00090.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00090\mix_00090_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00090\mix_00090_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00090\mix_00090_8k_source2.wav
+Separating mixtures:  46%|####5     | 91/200 [00:29<00:37,  2.87it/s]INFO:__main__:Processing mixture: mix_00091
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00091.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00091\mix_00091_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00091\mix_00091_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00091\mix_00091_8k_source2.wav
+Separating mixtures:  46%|####6     | 92/200 [00:29<00:34,  3.15it/s]INFO:__main__:Processing mixture: mix_00092
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00092.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00092\mix_00092_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00092\mix_00092_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00092\mix_00092_8k_source2.wav
+Separating mixtures:  46%|####6     | 93/200 [00:29<00:33,  3.20it/s]INFO:__main__:Processing mixture: mix_00093
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00093.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00093\mix_00093_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00093\mix_00093_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00093\mix_00093_8k_source2.wav
+Separating mixtures:  47%|####6     | 94/200 [00:30<00:37,  2.82it/s]INFO:__main__:Processing mixture: mix_00094
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00094.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00094\mix_00094_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00094\mix_00094_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00094\mix_00094_8k_source2.wav
+Separating mixtures:  48%|####7     | 95/200 [00:30<00:35,  2.92it/s]INFO:__main__:Processing mixture: mix_00095
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00095.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00095\mix_00095_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00095\mix_00095_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00095\mix_00095_8k_source2.wav
+Separating mixtures:  48%|####8     | 96/200 [00:30<00:33,  3.14it/s]INFO:__main__:Processing mixture: mix_00096
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00096.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00096\mix_00096_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00096\mix_00096_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00096\mix_00096_8k_source2.wav
+Separating mixtures:  48%|####8     | 97/200 [00:31<00:33,  3.05it/s]INFO:__main__:Processing mixture: mix_00097
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00097.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00097\mix_00097_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00097\mix_00097_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00097\mix_00097_8k_source2.wav
+Separating mixtures:  49%|####9     | 98/200 [00:31<00:31,  3.28it/s]INFO:__main__:Processing mixture: mix_00098
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00098.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00098\mix_00098_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00098\mix_00098_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00098\mix_00098_8k_source2.wav
+Separating mixtures:  50%|####9     | 99/200 [00:31<00:29,  3.46it/s]INFO:__main__:Processing mixture: mix_00099
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00099.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00099\mix_00099_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00099\mix_00099_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00099\mix_00099_8k_source2.wav
+Separating mixtures:  50%|#####     | 100/200 [00:31<00:31,  3.18it/s]INFO:__main__:Processing mixture: mix_00100
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00100.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00100\mix_00100_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00100\mix_00100_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00100\mix_00100_8k_source2.wav
+Separating mixtures:  50%|#####     | 101/200 [00:32<00:33,  2.93it/s]INFO:__main__:Processing mixture: mix_00101
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00101.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00101\mix_00101_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00101\mix_00101_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00101\mix_00101_8k_source2.wav
+Separating mixtures:  51%|#####1    | 102/200 [00:32<00:31,  3.14it/s]INFO:__main__:Processing mixture: mix_00102
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00102.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00102\mix_00102_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00102\mix_00102_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00102\mix_00102_8k_source2.wav
+Separating mixtures:  52%|#####1    | 103/200 [00:32<00:29,  3.34it/s]INFO:__main__:Processing mixture: mix_00103
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00103.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00103\mix_00103_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00103\mix_00103_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00103\mix_00103_8k_source2.wav
+Separating mixtures:  52%|#####2    | 104/200 [00:33<00:27,  3.51it/s]INFO:__main__:Processing mixture: mix_00104
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00104.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00104\mix_00104_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00104\mix_00104_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00104\mix_00104_8k_source2.wav
+Separating mixtures:  52%|#####2    | 105/200 [00:33<00:32,  2.92it/s]INFO:__main__:Processing mixture: mix_00105
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00105.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00105\mix_00105_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00105\mix_00105_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00105\mix_00105_8k_source2.wav
+Separating mixtures:  53%|#####3    | 106/200 [00:33<00:30,  3.11it/s]INFO:__main__:Processing mixture: mix_00106
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00106.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00106\mix_00106_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00106\mix_00106_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00106\mix_00106_8k_source2.wav
+Separating mixtures:  54%|#####3    | 107/200 [00:34<00:28,  3.31it/s]INFO:__main__:Processing mixture: mix_00107
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00107.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00107\mix_00107_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00107\mix_00107_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00107\mix_00107_8k_source2.wav
+Separating mixtures:  54%|#####4    | 108/200 [00:35<00:43,  2.09it/s]INFO:__main__:Processing mixture: mix_00108
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00108.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00108\mix_00108_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00108\mix_00108_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00108\mix_00108_8k_source2.wav
+Separating mixtures:  55%|#####4    | 109/200 [00:35<00:40,  2.27it/s]INFO:__main__:Processing mixture: mix_00109
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00109.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00109\mix_00109_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00109\mix_00109_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00109\mix_00109_8k_source2.wav
+Separating mixtures:  55%|#####5    | 110/200 [00:35<00:34,  2.58it/s]INFO:__main__:Processing mixture: mix_00110
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00110.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00110\mix_00110_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00110\mix_00110_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00110\mix_00110_8k_source2.wav
+Separating mixtures:  56%|#####5    | 111/200 [00:35<00:32,  2.78it/s]INFO:__main__:Processing mixture: mix_00111
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00111.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00111\mix_00111_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00111\mix_00111_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00111\mix_00111_8k_source2.wav
+Separating mixtures:  56%|#####6    | 112/200 [00:36<00:28,  3.05it/s]INFO:__main__:Processing mixture: mix_00112
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00112.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00112\mix_00112_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00112\mix_00112_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00112\mix_00112_8k_source2.wav
+Separating mixtures:  56%|#####6    | 113/200 [00:36<00:28,  3.07it/s]INFO:__main__:Processing mixture: mix_00113
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00113.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00113\mix_00113_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00113\mix_00113_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00113\mix_00113_8k_source2.wav
+Separating mixtures:  57%|#####6    | 114/200 [00:36<00:28,  3.04it/s]INFO:__main__:Processing mixture: mix_00114
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00114.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00114\mix_00114_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00114\mix_00114_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00114\mix_00114_8k_source2.wav
+Separating mixtures:  57%|#####7    | 115/200 [00:37<00:27,  3.10it/s]INFO:__main__:Processing mixture: mix_00115
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00115.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00115\mix_00115_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00115\mix_00115_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00115\mix_00115_8k_source2.wav
+Separating mixtures:  58%|#####8    | 116/200 [00:37<00:26,  3.13it/s]INFO:__main__:Processing mixture: mix_00116
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00116.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00116\mix_00116_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00116\mix_00116_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00116\mix_00116_8k_source2.wav
+Separating mixtures:  58%|#####8    | 117/200 [00:37<00:24,  3.32it/s]INFO:__main__:Processing mixture: mix_00117
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00117.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00117\mix_00117_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00117\mix_00117_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00117\mix_00117_8k_source2.wav
+Separating mixtures:  59%|#####8    | 118/200 [00:38<00:25,  3.16it/s]INFO:__main__:Processing mixture: mix_00118
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00118.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00118\mix_00118_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00118\mix_00118_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00118\mix_00118_8k_source2.wav
+Separating mixtures:  60%|#####9    | 119/200 [00:38<00:24,  3.34it/s]INFO:__main__:Processing mixture: mix_00119
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00119.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00119\mix_00119_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00119\mix_00119_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00119\mix_00119_8k_source2.wav
+Separating mixtures:  60%|######    | 120/200 [00:38<00:24,  3.28it/s]INFO:__main__:Processing mixture: mix_00120
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00120.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00120\mix_00120_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00120\mix_00120_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00120\mix_00120_8k_source2.wav
+Separating mixtures:  60%|######    | 121/200 [00:38<00:23,  3.38it/s]INFO:__main__:Processing mixture: mix_00121
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00121.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00121\mix_00121_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00121\mix_00121_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00121\mix_00121_8k_source2.wav
+Separating mixtures:  61%|######1   | 122/200 [00:39<00:25,  3.06it/s]INFO:__main__:Processing mixture: mix_00122
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00122.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00122\mix_00122_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00122\mix_00122_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00122\mix_00122_8k_source2.wav
+Separating mixtures:  62%|######1   | 123/200 [00:39<00:24,  3.19it/s]INFO:__main__:Processing mixture: mix_00123
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00123.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00123\mix_00123_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00123\mix_00123_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00123\mix_00123_8k_source2.wav
+Separating mixtures:  62%|######2   | 124/200 [00:39<00:22,  3.34it/s]INFO:__main__:Processing mixture: mix_00124
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00124.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00124\mix_00124_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00124\mix_00124_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00124\mix_00124_8k_source2.wav
+Separating mixtures:  62%|######2   | 125/200 [00:40<00:24,  3.04it/s]INFO:__main__:Processing mixture: mix_00125
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00125.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00125\mix_00125_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00125\mix_00125_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00125\mix_00125_8k_source2.wav
+Separating mixtures:  63%|######3   | 126/200 [00:40<00:26,  2.84it/s]INFO:__main__:Processing mixture: mix_00126
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00126.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00126\mix_00126_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00126\mix_00126_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00126\mix_00126_8k_source2.wav
+Separating mixtures:  64%|######3   | 127/200 [00:41<00:25,  2.89it/s]INFO:__main__:Processing mixture: mix_00127
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00127.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00127\mix_00127_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00127\mix_00127_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00127\mix_00127_8k_source2.wav
+Separating mixtures:  64%|######4   | 128/200 [00:41<00:23,  3.00it/s]INFO:__main__:Processing mixture: mix_00128
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00128.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00128\mix_00128_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00128\mix_00128_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00128\mix_00128_8k_source2.wav
+Separating mixtures:  64%|######4   | 129/200 [00:41<00:22,  3.20it/s]INFO:__main__:Processing mixture: mix_00129
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00129.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00129\mix_00129_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00129\mix_00129_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00129\mix_00129_8k_source2.wav
+Separating mixtures:  65%|######5   | 130/200 [00:41<00:20,  3.41it/s]INFO:__main__:Processing mixture: mix_00130
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00130.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00130\mix_00130_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00130\mix_00130_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00130\mix_00130_8k_source2.wav
+Separating mixtures:  66%|######5   | 131/200 [00:42<00:19,  3.55it/s]INFO:__main__:Processing mixture: mix_00131
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00131.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00131\mix_00131_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00131\mix_00131_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00131\mix_00131_8k_source2.wav
+Separating mixtures:  66%|######6   | 132/200 [00:42<00:24,  2.75it/s]INFO:__main__:Processing mixture: mix_00132
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00132.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00132\mix_00132_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00132\mix_00132_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00132\mix_00132_8k_source2.wav
+Separating mixtures:  66%|######6   | 133/200 [00:42<00:22,  2.92it/s]INFO:__main__:Processing mixture: mix_00133
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00133.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00133\mix_00133_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00133\mix_00133_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00133\mix_00133_8k_source2.wav
+Separating mixtures:  67%|######7   | 134/200 [00:43<00:22,  2.89it/s]INFO:__main__:Processing mixture: mix_00134
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00134.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00134\mix_00134_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00134\mix_00134_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00134\mix_00134_8k_source2.wav
+Separating mixtures:  68%|######7   | 135/200 [00:43<00:20,  3.10it/s]INFO:__main__:Processing mixture: mix_00135
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00135.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00135\mix_00135_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00135\mix_00135_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00135\mix_00135_8k_source2.wav
+Separating mixtures:  68%|######8   | 136/200 [00:43<00:19,  3.34it/s]INFO:__main__:Processing mixture: mix_00136
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00136.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00136\mix_00136_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00136\mix_00136_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00136\mix_00136_8k_source2.wav
+Separating mixtures:  68%|######8   | 137/200 [00:44<00:18,  3.48it/s]INFO:__main__:Processing mixture: mix_00137
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00137.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00137\mix_00137_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00137\mix_00137_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00137\mix_00137_8k_source2.wav
+Separating mixtures:  69%|######9   | 138/200 [00:44<00:17,  3.55it/s]INFO:__main__:Processing mixture: mix_00138
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00138.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00138\mix_00138_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00138\mix_00138_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00138\mix_00138_8k_source2.wav
+Separating mixtures:  70%|######9   | 139/200 [00:44<00:17,  3.44it/s]INFO:__main__:Processing mixture: mix_00139
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00139.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00139\mix_00139_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00139\mix_00139_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00139\mix_00139_8k_source2.wav
+Separating mixtures:  70%|#######   | 140/200 [00:44<00:17,  3.51it/s]INFO:__main__:Processing mixture: mix_00140
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00140.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00140\mix_00140_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00140\mix_00140_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00140\mix_00140_8k_source2.wav
+Separating mixtures:  70%|#######   | 141/200 [00:45<00:17,  3.46it/s]INFO:__main__:Processing mixture: mix_00141
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00141.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00141\mix_00141_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00141\mix_00141_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00141\mix_00141_8k_source2.wav
+Separating mixtures:  71%|#######1  | 142/200 [00:45<00:20,  2.84it/s]INFO:__main__:Processing mixture: mix_00142
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00142.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00142\mix_00142_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00142\mix_00142_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00142\mix_00142_8k_source2.wav
+Separating mixtures:  72%|#######1  | 143/200 [00:46<00:20,  2.83it/s]INFO:__main__:Processing mixture: mix_00143
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00143.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00143\mix_00143_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00143\mix_00143_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00143\mix_00143_8k_source2.wav
+Separating mixtures:  72%|#######2  | 144/200 [00:46<00:20,  2.69it/s]INFO:__main__:Processing mixture: mix_00144
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00144.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00144\mix_00144_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00144\mix_00144_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00144\mix_00144_8k_source2.wav
+Separating mixtures:  72%|#######2  | 145/200 [00:46<00:19,  2.88it/s]INFO:__main__:Processing mixture: mix_00145
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00145.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00145\mix_00145_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00145\mix_00145_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00145\mix_00145_8k_source2.wav
+Separating mixtures:  73%|#######3  | 146/200 [00:47<00:18,  2.93it/s]INFO:__main__:Processing mixture: mix_00146
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00146.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00146\mix_00146_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00146\mix_00146_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00146\mix_00146_8k_source2.wav
+Separating mixtures:  74%|#######3  | 147/200 [00:47<00:23,  2.27it/s]INFO:__main__:Processing mixture: mix_00147
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00147.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00147\mix_00147_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00147\mix_00147_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00147\mix_00147_8k_source2.wav
+Separating mixtures:  74%|#######4  | 148/200 [00:48<00:21,  2.44it/s]INFO:__main__:Processing mixture: mix_00148
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00148.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00148\mix_00148_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00148\mix_00148_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00148\mix_00148_8k_source2.wav
+Separating mixtures:  74%|#######4  | 149/200 [00:48<00:18,  2.74it/s]INFO:__main__:Processing mixture: mix_00149
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00149.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00149\mix_00149_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00149\mix_00149_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00149\mix_00149_8k_source2.wav
+Separating mixtures:  75%|#######5  | 150/200 [00:48<00:18,  2.72it/s]INFO:__main__:Processing mixture: mix_00150
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00150.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00150\mix_00150_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00150\mix_00150_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00150\mix_00150_8k_source2.wav
+Separating mixtures:  76%|#######5  | 151/200 [00:49<00:17,  2.76it/s]INFO:__main__:Processing mixture: mix_00151
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00151.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00151\mix_00151_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00151\mix_00151_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00151\mix_00151_8k_source2.wav
+Separating mixtures:  76%|#######6  | 152/200 [00:49<00:15,  3.03it/s]INFO:__main__:Processing mixture: mix_00152
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00152.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00152\mix_00152_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00152\mix_00152_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00152\mix_00152_8k_source2.wav
+Separating mixtures:  76%|#######6  | 153/200 [00:49<00:14,  3.20it/s]INFO:__main__:Processing mixture: mix_00153
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00153.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00153\mix_00153_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00153\mix_00153_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00153\mix_00153_8k_source2.wav
+Separating mixtures:  77%|#######7  | 154/200 [00:49<00:13,  3.36it/s]INFO:__main__:Processing mixture: mix_00154
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00154.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00154\mix_00154_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00154\mix_00154_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00154\mix_00154_8k_source2.wav
+Separating mixtures:  78%|#######7  | 155/200 [00:50<00:13,  3.46it/s]INFO:__main__:Processing mixture: mix_00155
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00155.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00155\mix_00155_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00155\mix_00155_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00155\mix_00155_8k_source2.wav
+Separating mixtures:  78%|#######8  | 156/200 [00:50<00:12,  3.55it/s]INFO:__main__:Processing mixture: mix_00156
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00156.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00156\mix_00156_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00156\mix_00156_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00156\mix_00156_8k_source2.wav
+Separating mixtures:  78%|#######8  | 157/200 [00:50<00:15,  2.72it/s]INFO:__main__:Processing mixture: mix_00157
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00157.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00157\mix_00157_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00157\mix_00157_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00157\mix_00157_8k_source2.wav
+Separating mixtures:  79%|#######9  | 158/200 [00:51<00:14,  2.91it/s]INFO:__main__:Processing mixture: mix_00158
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00158.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00158\mix_00158_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00158\mix_00158_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00158\mix_00158_8k_source2.wav
+Separating mixtures:  80%|#######9  | 159/200 [00:51<00:13,  3.05it/s]INFO:__main__:Processing mixture: mix_00159
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00159.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00159\mix_00159_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00159\mix_00159_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00159\mix_00159_8k_source2.wav
+Separating mixtures:  80%|########  | 160/200 [00:51<00:13,  3.00it/s]INFO:__main__:Processing mixture: mix_00160
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00160.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00160\mix_00160_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00160\mix_00160_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00160\mix_00160_8k_source2.wav
+Separating mixtures:  80%|########  | 161/200 [00:52<00:12,  3.24it/s]INFO:__main__:Processing mixture: mix_00161
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00161.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00161\mix_00161_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00161\mix_00161_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00161\mix_00161_8k_source2.wav
+Separating mixtures:  81%|########1 | 162/200 [00:52<00:12,  3.16it/s]INFO:__main__:Processing mixture: mix_00162
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00162.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00162\mix_00162_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00162\mix_00162_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00162\mix_00162_8k_source2.wav
+Separating mixtures:  82%|########1 | 163/200 [00:52<00:11,  3.23it/s]INFO:__main__:Processing mixture: mix_00163
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00163.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00163\mix_00163_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00163\mix_00163_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00163\mix_00163_8k_source2.wav
+Separating mixtures:  82%|########2 | 164/200 [00:53<00:10,  3.40it/s]INFO:__main__:Processing mixture: mix_00164
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00164.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00164\mix_00164_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00164\mix_00164_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00164\mix_00164_8k_source2.wav
+Separating mixtures:  82%|########2 | 165/200 [00:53<00:10,  3.25it/s]INFO:__main__:Processing mixture: mix_00165
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00165.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00165\mix_00165_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00165\mix_00165_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00165\mix_00165_8k_source2.wav
+Separating mixtures:  83%|########2 | 166/200 [00:53<00:10,  3.19it/s]INFO:__main__:Processing mixture: mix_00166
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00166.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00166\mix_00166_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00166\mix_00166_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00166\mix_00166_8k_source2.wav
+Separating mixtures:  84%|########3 | 167/200 [00:54<00:11,  3.00it/s]INFO:__main__:Processing mixture: mix_00167
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00167.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00167\mix_00167_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00167\mix_00167_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00167\mix_00167_8k_source2.wav
+Separating mixtures:  84%|########4 | 168/200 [00:54<00:11,  2.78it/s]INFO:__main__:Processing mixture: mix_00168
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00168.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00168\mix_00168_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00168\mix_00168_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00168\mix_00168_8k_source2.wav
+Separating mixtures:  84%|########4 | 169/200 [00:54<00:10,  3.05it/s]INFO:__main__:Processing mixture: mix_00169
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00169.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00169\mix_00169_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00169\mix_00169_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00169\mix_00169_8k_source2.wav
+Separating mixtures:  85%|########5 | 170/200 [00:55<00:09,  3.28it/s]INFO:__main__:Processing mixture: mix_00170
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00170.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00170\mix_00170_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00170\mix_00170_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00170\mix_00170_8k_source2.wav
+Separating mixtures:  86%|########5 | 171/200 [00:55<00:09,  3.15it/s]INFO:__main__:Processing mixture: mix_00171
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00171.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00171\mix_00171_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00171\mix_00171_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00171\mix_00171_8k_source2.wav
+Separating mixtures:  86%|########6 | 172/200 [00:55<00:08,  3.23it/s]INFO:__main__:Processing mixture: mix_00172
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00172.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00172\mix_00172_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00172\mix_00172_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00172\mix_00172_8k_source2.wav
+Separating mixtures:  86%|########6 | 173/200 [00:55<00:07,  3.39it/s]INFO:__main__:Processing mixture: mix_00173
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00173.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00173\mix_00173_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00173\mix_00173_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00173\mix_00173_8k_source2.wav
+Separating mixtures:  87%|########7 | 174/200 [00:56<00:07,  3.54it/s]INFO:__main__:Processing mixture: mix_00174
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00174.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00174\mix_00174_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00174\mix_00174_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00174\mix_00174_8k_source2.wav
+Separating mixtures:  88%|########7 | 175/200 [00:56<00:06,  3.58it/s]INFO:__main__:Processing mixture: mix_00175
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00175.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00175\mix_00175_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00175\mix_00175_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00175\mix_00175_8k_source2.wav
+Separating mixtures:  88%|########8 | 176/200 [00:56<00:06,  3.63it/s]INFO:__main__:Processing mixture: mix_00176
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00176.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00176\mix_00176_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00176\mix_00176_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00176\mix_00176_8k_source2.wav
+Separating mixtures:  88%|########8 | 177/200 [00:57<00:06,  3.35it/s]INFO:__main__:Processing mixture: mix_00177
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00177.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00177\mix_00177_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00177\mix_00177_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00177\mix_00177_8k_source2.wav
+Separating mixtures:  89%|########9 | 178/200 [00:57<00:06,  3.30it/s]INFO:__main__:Processing mixture: mix_00178
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00178.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00178\mix_00178_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00178\mix_00178_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00178\mix_00178_8k_source2.wav
+Separating mixtures:  90%|########9 | 179/200 [00:57<00:07,  3.00it/s]INFO:__main__:Processing mixture: mix_00179
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00179.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00179\mix_00179_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00179\mix_00179_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00179\mix_00179_8k_source2.wav
+Separating mixtures:  90%|######### | 180/200 [00:58<00:06,  2.92it/s]INFO:__main__:Processing mixture: mix_00180
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00180.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00180\mix_00180_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00180\mix_00180_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00180\mix_00180_8k_source2.wav
+Separating mixtures:  90%|######### | 181/200 [00:58<00:07,  2.58it/s]INFO:__main__:Processing mixture: mix_00181
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00181.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00181\mix_00181_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00181\mix_00181_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00181\mix_00181_8k_source2.wav
+Separating mixtures:  91%|#########1| 182/200 [00:59<00:07,  2.32it/s]INFO:__main__:Processing mixture: mix_00182
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00182.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00182\mix_00182_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00182\mix_00182_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00182\mix_00182_8k_source2.wav
+Separating mixtures:  92%|#########1| 183/200 [00:59<00:08,  2.07it/s]INFO:__main__:Processing mixture: mix_00183
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00183.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00183\mix_00183_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00183\mix_00183_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00183\mix_00183_8k_source2.wav
+Separating mixtures:  92%|#########2| 184/200 [01:00<00:06,  2.34it/s]INFO:__main__:Processing mixture: mix_00184
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00184.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00184\mix_00184_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00184\mix_00184_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00184\mix_00184_8k_source2.wav
+Separating mixtures:  92%|#########2| 185/200 [01:00<00:05,  2.52it/s]INFO:__main__:Processing mixture: mix_00185
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00185.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00185\mix_00185_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00185\mix_00185_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00185\mix_00185_8k_source2.wav
+Separating mixtures:  93%|#########3| 186/200 [01:00<00:05,  2.75it/s]INFO:__main__:Processing mixture: mix_00186
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00186.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00186\mix_00186_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00186\mix_00186_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00186\mix_00186_8k_source2.wav
+Separating mixtures:  94%|#########3| 187/200 [01:00<00:04,  2.99it/s]INFO:__main__:Processing mixture: mix_00187
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00187.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00187\mix_00187_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00187\mix_00187_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00187\mix_00187_8k_source2.wav
+Separating mixtures:  94%|#########3| 188/200 [01:01<00:04,  2.76it/s]INFO:__main__:Processing mixture: mix_00188
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00188.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00188\mix_00188_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00188\mix_00188_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00188\mix_00188_8k_source2.wav
+Separating mixtures:  94%|#########4| 189/200 [01:01<00:03,  2.88it/s]INFO:__main__:Processing mixture: mix_00189
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00189.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00189\mix_00189_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00189\mix_00189_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00189\mix_00189_8k_source2.wav
+Separating mixtures:  95%|#########5| 190/200 [01:02<00:03,  2.86it/s]INFO:__main__:Processing mixture: mix_00190
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00190.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00190\mix_00190_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00190\mix_00190_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00190\mix_00190_8k_source2.wav
+Separating mixtures:  96%|#########5| 191/200 [01:02<00:03,  2.87it/s]INFO:__main__:Processing mixture: mix_00191
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00191.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00191\mix_00191_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00191\mix_00191_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00191\mix_00191_8k_source2.wav
+Separating mixtures:  96%|#########6| 192/200 [01:02<00:02,  2.90it/s]INFO:__main__:Processing mixture: mix_00192
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00192.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00192\mix_00192_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00192\mix_00192_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00192\mix_00192_8k_source2.wav
+Separating mixtures:  96%|#########6| 193/200 [01:03<00:02,  2.34it/s]INFO:__main__:Processing mixture: mix_00193
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00193.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00193\mix_00193_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00193\mix_00193_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00193\mix_00193_8k_source2.wav
+Separating mixtures:  97%|#########7| 194/200 [01:03<00:02,  2.47it/s]INFO:__main__:Processing mixture: mix_00194
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00194.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00194\mix_00194_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00194\mix_00194_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00194\mix_00194_8k_source2.wav
+Separating mixtures:  98%|#########7| 195/200 [01:03<00:01,  2.77it/s]INFO:__main__:Processing mixture: mix_00195
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00195.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00195\mix_00195_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00195\mix_00195_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00195\mix_00195_8k_source2.wav
+Separating mixtures:  98%|#########8| 196/200 [01:04<00:01,  2.93it/s]INFO:__main__:Processing mixture: mix_00196
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00196.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00196\mix_00196_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00196\mix_00196_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00196\mix_00196_8k_source2.wav
+Separating mixtures:  98%|#########8| 197/200 [01:04<00:00,  3.18it/s]INFO:__main__:Processing mixture: mix_00197
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00197.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00197\mix_00197_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00197\mix_00197_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00197\mix_00197_8k_source2.wav
+Separating mixtures:  99%|#########9| 198/200 [01:04<00:00,  2.97it/s]INFO:__main__:Processing mixture: mix_00198
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00198.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00198\mix_00198_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00198\mix_00198_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00198\mix_00198_8k_source2.wav
+Separating mixtures: 100%|#########9| 199/200 [01:05<00:00,  3.17it/s]INFO:__main__:Processing mixture: mix_00199
+INFO:__main__:Loading and resampling audio: data\vox2\mixtures_test\mixed\mix_00199.wav
+INFO:__main__:Resampling from 16000Hz to 8000Hz
+INFO:__main__:Performing source separation
+INFO:__main__:Separating mixture: results\speech_enhancement\separated_test\mix_00199\mix_00199_8k.wav
+INFO:__main__:Separation complete, got 2 sources
+INFO:__main__:Saved separated source 1 to results\speech_enhancement\separated_test\mix_00199\mix_00199_8k_source1.wav
+INFO:__main__:Saved separated source 2 to results\speech_enhancement\separated_test\mix_00199\mix_00199_8k_source2.wav
+Separating mixtures: 100%|##########| 200/200 [01:05<00:00,  3.18it/s]Separating mixtures: 100%|##########| 200/200 [01:05<00:00,  3.05it/s]
+INFO:__main__:Saved metadata to results\speech_enhancement\separated_test\separated_sources.csv

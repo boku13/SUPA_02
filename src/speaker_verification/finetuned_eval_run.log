@@ -1,0 +1,254 @@
+2025-03-30 18:04:02,735 - utils - INFO - Using device: cuda
+2025-03-30 18:04:02,740 - pretrained_eval - INFO - Initial pretrained_eval device setting: cuda
+2025-03-30 18:04:03,408 - speaker_verification.pretrained_eval - INFO - Initial pretrained_eval device setting: cuda
+2025-03-30 18:04:03,414 - finetune - INFO - Using device: cuda
+2025-03-30 18:04:03,415 - __main__ - INFO - Using device: cuda
+2025-03-30 18:04:03,417 - __main__ - INFO - Loading pretrained results from pretrained_results.csv
+2025-03-30 18:04:03,421 - __main__ - INFO - Loaded pretrained results: EER=36.724996681249166%
+2025-03-30 18:04:03,421 - __main__ - INFO - Loading pretrained model architecture for wavlm_base_plus
+2025-03-30 18:04:03,421 - pretrained_eval - INFO - Using device for model loading: cuda
+2025-03-30 18:04:03,421 - pretrained_eval - INFO - CUDA is available. Device count: 1
+2025-03-30 18:04:03,421 - pretrained_eval - INFO - Loading pretrained model: microsoft/wavlm-base-plus
+2025-03-30 18:04:06,012 - pretrained_eval - INFO - Model moved to cuda
+2025-03-30 18:04:06,013 - __main__ - INFO - Setting up finetuned model architecture for wavlm_base_plus
+2025-03-30 18:04:06,013 - __main__ - INFO - Loading train metadata to get speaker count: data/vox2/vox2_train.csv
+2025-03-30 18:04:06,037 - __main__ - INFO - Using 100 speakers for model
+2025-03-30 18:04:06,037 - __main__ - INFO - Creating SpeakerVerificationModel with backbone and LoRA
+2025-03-30 18:04:06,040 - __main__ - INFO - Applying LoRA configuration to model
+2025-03-30 18:04:06,098 - __main__ - INFO - Finetuned model structure: PeftModelForFeatureExtraction(
+  (base_model): LoraModel(
+    (model): SpeakerVerificationModel(
+      (backbone): WavLMModel(
+        (feature_extractor): WavLMFeatureEncoder(
+          (conv_layers): ModuleList(
+            (0): WavLMGroupNormConvLayer(
+              (conv): Conv1d(1, 512, kernel_size=(10,), stride=(5,), bias=False)
+              (activation): GELUActivation()
+              (layer_norm): GroupNorm(512, 512, eps=1e-05, affine=True)
+            )
+            (1-4): 4 x WavLMNoLayerNormConvLayer(
+              (conv): Conv1d(512, 512, kernel_size=(3,), stride=(2,), bias=False)
+              (activation): GELUActivation()
+            )
+            (5-6): 2 x WavLMNoLayerNormConvLayer(
+              (conv): Conv1d(512, 512, kernel_size=(2,), stride=(2,), bias=False)
+              (activation): GELUActivation()
+            )
+          )
+        )
+        (feature_projection): WavLMFeatureProjection(
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (projection): Linear(in_features=512, out_features=768, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder): WavLMEncoder(
+          (pos_conv_embed): WavLMPositionalConvEmbedding(
+            (conv): ParametrizedConv1d(
+              768, 768, kernel_size=(128,), stride=(1,), padding=(64,), groups=16
+              (parametrizations): ModuleDict(
+                (weight): ParametrizationList(
+                  (0): _WeightNorm()
+                )
+              )
+            )
+            (padding): WavLMSamePadLayer()
+            (activation): GELUActivation()
+          )
+          (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layers): ModuleList(
+            (0): WavLMEncoderLayer(
+              (attention): WavLMAttention(
+                (k_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (v_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (q_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (out_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (gru_rel_pos_linear): Linear(in_features=64, out_features=8, bias=True)
+                (rel_attn_embed): Embedding(320, 12)
+              )
+              (dropout): Dropout(p=0.1, inplace=False)
+              (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (feed_forward): WavLMFeedForward(
+                (intermediate_dropout): Dropout(p=0.0, inplace=False)
+                (intermediate_dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+                (output_dense): Linear(in_features=3072, out_features=768, bias=True)
+                (output_dropout): Dropout(p=0.1, inplace=False)
+              )
+              (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            )
+            (1-11): 11 x WavLMEncoderLayer(
+              (attention): WavLMAttention(
+                (k_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (v_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (q_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (out_proj): lora.Linear(
+                  (base_layer): Linear(in_features=768, out_features=768, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.1, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=768, out_features=16, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=16, out_features=768, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (gru_rel_pos_linear): Linear(in_features=64, out_features=8, bias=True)
+              )
+              (dropout): Dropout(p=0.1, inplace=False)
+              (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (feed_forward): WavLMFeedForward(
+                (intermediate_dropout): Dropout(p=0.0, inplace=False)
+                (intermediate_dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+                (output_dense): Linear(in_features=3072, out_features=768, bias=True)
+                (output_dropout): Dropout(p=0.1, inplace=False)
+              )
+              (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            )
+          )
+        )
+      )
+      (arcface): ArcFaceLayer()
+    )
+  )
+)
+2025-03-30 18:04:06,099 - __main__ - INFO - Attempting to load weights using PEFT's load_peft_weights: models/speaker_verification/wavlm_ft/best_model.pt
+2025-03-30 18:04:06,099 - __main__ - WARNING - Could not use PEFT's load_peft_weights: expected str, bytes or os.PathLike object, not PeftModelForFeatureExtraction
+2025-03-30 18:04:06,099 - __main__ - INFO - Falling back to standard weight loading method
+2025-03-30 18:04:06,099 - __main__ - INFO - Verifying weight loading from models/speaker_verification/wavlm_ft/best_model.pt
+2025-03-30 18:04:06,100 - __main__ - INFO - Sampled 3 trainable parameters before loading weights
+2025-03-30 18:04:06,100 - __main__ - INFO - Parameter to track: base_model.model.backbone.encoder.layers.0.attention.k_proj.lora_A.default.weight
+2025-03-30 18:04:06,100 - __main__ - INFO - Parameter to track: base_model.model.backbone.encoder.layers.0.attention.k_proj.lora_B.default.weight
+2025-03-30 18:04:06,100 - __main__ - INFO - Parameter to track: base_model.model.backbone.encoder.layers.0.attention.v_proj.lora_A.default.weight
+2025-03-30 18:04:06,100 - __main__ - INFO - Loading state dict from models/speaker_verification/wavlm_ft/best_model.pt
+2025-03-30 18:04:06,507 - __main__ - INFO - State dict has PEFT format: True
+2025-03-30 18:04:06,508 - __main__ - INFO - Loading state dict with PEFT format adjustment
+trainable params: 1,179,648 || all params: 95,638,384 || trainable%: 1.2334
+Traceback (most recent call last):
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speaker_verification\evaluate_models.py", line 567, in compare_pretrained_and_finetuned
+    finetuned_model = load_peft_weights(finetuned_model, finetuned_model_path)
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\peft\utils\save_and_load.py", line 513, in load_peft_weights
+    if os.path.exists(os.path.join(path, SAFETENSORS_WEIGHTS_NAME)):
+  File "C:\Users\SQREAM\miniconda3\envs\motioncapture\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not PeftModelForFeatureExtraction
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speaker_verification\evaluate_models.py", line 751, in <module>
+    main()
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speaker_verification\evaluate_models.py", line 736, in main
+    compare_pretrained_and_finetuned(
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speaker_verification\evaluate_models.py", line 575, in compare_pretrained_and_finetuned
+    weights_changed = verify_weight_loading(finetuned_model, finetuned_model_path)
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speaker_verification\evaluate_models.py", line 260, in verify_weight_loading
+    model = load_peft_weights(model, saved_weights_path)
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\peft\utils\save_and_load.py", line 513, in load_peft_weights
+    if os.path.exists(os.path.join(path, SAFETENSORS_WEIGHTS_NAME)):
+  File "C:\Users\SQREAM\miniconda3\envs\motioncapture\lib\ntpath.py", line 78, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not PeftModelForFeatureExtraction

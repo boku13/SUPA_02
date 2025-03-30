@@ -1,0 +1,3 @@
+source_path,predicted_speaker,expected_speaker,similarity,is_correct
+data\vox2\separated_test\mix_00142\mix_00142_8k_source1.wav,id03677,id03677,0.9552801251411438,True
+data\vox2\separated_test\mix_00142\mix_00142_8k_source2.wav,id04536,id04536,0.9532972574234009,True

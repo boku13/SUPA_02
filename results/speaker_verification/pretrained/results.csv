@@ -1,0 +1,2 @@
+model_name,eer,tar_at_1far,accuracy,eer_threshold,optimal_far_threshold
+wavlm_base_plus,36.731275212548354,7.392830549941495,63.26872457525724,0.8699209690093994,0.930152177810669

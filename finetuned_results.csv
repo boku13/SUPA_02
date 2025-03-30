@@ -1,0 +1,2 @@
+model_name,eer,tar_at_1far,accuracy,eer_threshold,optimal_far_threshold,num_trials,trial_subset_path
+wavlm_base_plus,36.724996681249166,5.197401299350324,63.275000000000006,0.8688355088233948,0.9272710084915161,4000,data/vox1/trial_subset_4000.txt

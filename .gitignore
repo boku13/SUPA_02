@@ -1,0 +1,14 @@
+data/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+speech/
+__pycache__/
+
+ results/speech_enhancement/
+ results/
+ models/
+ 

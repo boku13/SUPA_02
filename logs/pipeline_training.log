@@ -1,0 +1,105 @@
+2025-03-30 22:13:21,832 - utils - INFO - Using device: cuda
+2025-03-30 22:13:22,197 - speechbrain.utils.quirks - INFO - Applied quirks (see `speechbrain.utils.quirks`): [allow_tf32, disable_jit_profiling]
+2025-03-30 22:13:22,197 - speechbrain.utils.quirks - INFO - Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speech_enhancement\sepformer.py:12: UserWarning: Module 'speechbrain.pretrained' was deprecated, redirecting to 'speechbrain.inference'. Please update your script. This is a change from SpeechBrain 1.0. See: https://github.com/speechbrain/speechbrain/releases/tag/v1.0.0
+  from speechbrain.pretrained import SepformerSeparation
+2025-03-30 22:13:26,634 - speaker_verification.pretrained_eval - INFO - Initial pretrained_eval device setting: cuda
+2025-03-30 22:13:27,223 - speaker_verification.finetune - INFO - Using device: cuda
+2025-03-30 22:13:27,224 - __main__ - INFO - PESQ module is available for evaluation
+2025-03-30 22:13:27,225 - speaker_verification.pretrained_eval - INFO - Using device for model loading: cuda
+2025-03-30 22:13:27,225 - speaker_verification.pretrained_eval - INFO - CUDA is available. Device count: 1
+2025-03-30 22:13:27,225 - speaker_verification.pretrained_eval - INFO - Loading pretrained model: microsoft/wavlm-base-plus
+2025-03-30 22:13:29,461 - speaker_verification.pretrained_eval - INFO - Model moved to cuda
+2025-03-30 22:13:29,462 - __main__ - INFO - Loading speaker model weights from models/speaker_verification/wavlm_ft/best_model.pt
+2025-03-30 22:13:29,978 - __main__ - INFO - Direct loading failed, attempting to load with LoRA...
+2025-03-30 22:13:30,121 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,121 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,121 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,121 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,121 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,121 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,121 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,122 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,123 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,124 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,125 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,126 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.k_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,126 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.v_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,126 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.q_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,126 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.out_proj.lora_B.default.weight with random values
+2025-03-30 22:13:30,128 - speaker_verification.finetune - INFO - Trainable params: 1179648 || All params: 95638384 || Trainable%: 1.2334%
+2025-03-30 22:13:30,453 - speech_enhancement.sepformer - INFO - Loading SepFormer model...
+2025-03-30 22:13:30,454 - speech_enhancement.sepformer - INFO - Downloading model files from speechbrain/sepformer-wham
+2025-03-30 22:13:30,454 - speechbrain.utils.fetching - INFO - Fetch hyperparams.yaml: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\speechbrain\utils\fetching.py:151: UserWarning: Using SYMLINK strategy on Windows for fetching potentially requires elevated privileges and is not recommended. See `LocalStrategy` documentation.
+  warnings.warn(
+2025-03-30 22:13:30,718 - speechbrain.utils.fetching - INFO - Fetch custom.py: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\speechbrain\utils\parameter_transfer.py:234: UserWarning: Requested Pretrainer collection using symlinks on Windows. This might not work; see `LocalStrategy` documentation. Consider unsetting `collect_in` in Pretrainer to avoid symlinking altogether.
+  warnings.warn(
+2025-03-30 22:13:31,194 - speechbrain.utils.fetching - INFO - Fetch masknet.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:31,443 - speechbrain.utils.fetching - INFO - Fetch encoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:31,714 - speechbrain.utils.fetching - INFO - Fetch decoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:32,003 - speech_enhancement.sepformer - INFO - Loading the model into memory
+2025-03-30 22:13:32,004 - speechbrain.utils.fetching - INFO - Fetch hyperparams.yaml: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:32,251 - speechbrain.utils.fetching - INFO - Fetch custom.py: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:32,683 - speechbrain.utils.fetching - INFO - Fetch masknet.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:32,961 - speechbrain.utils.fetching - INFO - Fetch encoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:33,238 - speechbrain.utils.fetching - INFO - Fetch decoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-30 22:13:33,484 - speechbrain.utils.parameter_transfer - INFO - Loading pretrained files for: masknet, encoder, decoder
+2025-03-30 22:13:33,787 - speech_enhancement.sepformer - INFO - Testing if model is loaded properly
+2025-03-30 22:13:33,787 - speech_enhancement.sepformer - INFO - SepFormer model loaded successfully
+2025-03-30 22:13:33,808 - __main__ - INFO - Loaded dataset with 500 mixtures
+2025-03-30 22:13:33,810 - __main__ - INFO - Loaded dataset with 200 mixtures
+2025-03-30 22:13:33,812 - __main__ - INFO - Training with 16 parameters
+Epoch 1/5 [Train]:   0%|          | 0/250 [00:00<?, ?it/s]2025-03-30 22:13:33,916 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-30 22:13:35,279 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+Epoch 1/5 [Train]:   0%|          | 0/250 [00:01<?, ?it/s]
+Resampling the audio from 16000 Hz to 8000 Hz
+Resampling the audio from 16000 Hz to 8000 Hz
+Traceback (most recent call last):
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\combined_pipeline\train_enhanced_pipeline.py", line 603, in <module>
+    main() 
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\combined_pipeline\train_enhanced_pipeline.py", line 591, in main
+    trained_model = train_enhanced_model(
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\combined_pipeline\train_enhanced_pipeline.py", line 400, in train_enhanced_model
+    enhanced_sources, _ = model(mixture)
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\torch\nn\modules\module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\torch\nn\modules\module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\combined_pipeline\train_enhanced_pipeline.py", line 180, in forward
+    separated_sources_batch[j, i] = separated_sources[j, :min_audio_length].to(device)
+RuntimeError: expand(torch.cuda.FloatTensor{[80000, 2]}, size=[80000]): the number of sizes provided (1) must be greater or equal to the number of dimensions in the tensor (2)
