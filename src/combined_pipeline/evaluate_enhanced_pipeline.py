@@ -12,6 +12,7 @@ import torch.nn.functional as F
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
 import mir_eval
+from sklearn.manifold import TSNE
 
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -19,7 +20,7 @@ from utils import device, load_audio, setup_seed, save_audio
 from speech_enhancement.evaluation import evaluate_separation
 from speaker_verification.pretrained_eval import load_pretrained_model, extract_embeddings
 from speaker_verification.finetune import SpeakerVerificationModel, apply_lora
-from train_enhanced_pipeline import load_enhanced_model, EnhancedCombinedModel
+from train_enhanced_pipeline import load_enhanced_model, EnhancedCombinedModel, MultiSpeakerMixtureDataset
 
 # Configure logging
 logging.basicConfig(
@@ -111,196 +112,258 @@ def calculate_speaker_identification_accuracy(model, test_embeddings, reference_
     
     return accuracy
 
-def evaluate_enhanced_model(model, test_metadata_file, output_dir,
-                          pretrained_speaker_model=None, finetuned_speaker_model=None):
+def calculate_rank1_accuracy(reference_embeddings, test_embeddings, speaker_ids):
     """
-    Evaluate the enhanced combined model on test set
+    Calculate Rank-1 identification accuracy
     
     Args:
-        model: Enhanced combined model
-        test_metadata_file: Path to test metadata file
-        output_dir: Directory to save evaluation results
-        pretrained_speaker_model: Pretrained speaker model for identification (optional)
-        finetuned_speaker_model: Fine-tuned speaker model for identification (optional)
+        reference_embeddings: Dictionary mapping speaker_id to embedding vector
+        test_embeddings: List of embeddings from separated sources
+        speaker_ids: Ground truth speaker IDs for the sources
         
     Returns:
-        DataFrame with evaluation results
+        Rank-1 accuracy, correct predictions count, total predictions count
+    """
+    correct = 0
+    total = 0
+    
+    # Convert reference embeddings to tensor
+    ref_ids = list(reference_embeddings.keys())
+    ref_embeds = torch.stack([reference_embeddings[spk_id] for spk_id in ref_ids]).to(device)
+    
+    # For each test embedding, find the closest reference
+    for emb, true_id in zip(test_embeddings, speaker_ids):
+        # Calculate cosine similarity with all reference embeddings
+        similarities = F.cosine_similarity(emb.unsqueeze(0), ref_embeds)
+        
+        # Get the most similar reference embedding
+        top_idx = torch.argmax(similarities).item()
+        pred_id = ref_ids[top_idx]
+        
+        # Check if prediction is correct
+        if pred_id == true_id:
+            correct += 1
+        total += 1
+    
+    accuracy = correct / total if total > 0 else 0
+    return accuracy, correct, total
+
+def visualize_embeddings(reference_embeddings, test_embeddings, speaker_ids, output_path):
+    """
+    Visualize embeddings using t-SNE
+    
+    Args:
+        reference_embeddings: Dictionary mapping speaker_id to embedding vector
+        test_embeddings: List of embeddings from separated sources
+        speaker_ids: Ground truth speaker IDs for the sources
+        output_path: Path to save visualization
+    """
+    # Prepare data for t-SNE
+    ref_ids = list(reference_embeddings.keys())
+    ref_embeds = [reference_embeddings[spk_id].cpu().numpy() for spk_id in ref_ids]
+    test_embeds = [emb.cpu().numpy() for emb in test_embeddings]
+    
+    # Combine reference and test embeddings
+    all_embeds = np.vstack(ref_embeds + test_embeds)
+    all_ids = ref_ids + speaker_ids
+    
+    # Calculate t-SNE
+    tsne = TSNE(n_components=2, random_state=42, perplexity=min(30, len(all_embeds)-1))
+    embeddings_2d = tsne.fit_transform(all_embeds)
+    
+    # Split embeddings for plotting
+    ref_points = embeddings_2d[:len(ref_embeds)]
+    test_points = embeddings_2d[len(ref_embeds):]
+    
+    # Get unique speaker IDs for coloring
+    unique_ids = list(set(all_ids))
+    id_to_color = {spk_id: i for i, spk_id in enumerate(unique_ids)}
+    
+    # Create figure
+    plt.figure(figsize=(12, 10))
+    
+    # Plot reference embeddings
+    for i, (point, spk_id) in enumerate(zip(ref_points, ref_ids)):
+        plt.scatter(point[0], point[1], c=[id_to_color[spk_id]], marker='o', s=100, 
+                   label=f'Reference: {spk_id}' if i == 0 else "")
+    
+    # Plot test embeddings
+    for i, (point, spk_id) in enumerate(zip(test_points, speaker_ids)):
+        plt.scatter(point[0], point[1], c=[id_to_color[spk_id]], marker='x', s=50, 
+                   label=f'Test: {spk_id}' if i == 0 else "")
+    
+    plt.title('t-SNE Visualization of Speaker Embeddings')
+    plt.legend()
+    plt.savefig(output_path)
+    plt.close()
+
+def evaluate_enhanced_model(model, test_loader, output_dir, speaker_model=None):
+    """
+    Evaluate the enhanced speech separation and speaker identification model
+    
+    Args:
+        model: Enhanced model
+        test_loader: DataLoader for test data
+        output_dir: Directory to save evaluation results
+        speaker_model: Optional additional speaker model for comparison
+        
+    Returns:
+        DataFrame with evaluation results and average metrics
     """
     # Create output directory
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    # Load test metadata
-    test_metadata = pd.read_csv(test_metadata_file)
-    logger.info(f"Loaded test metadata with {len(test_metadata)} entries")
-    
-    # Set model to evaluation mode
+    # Ensure model is in evaluation mode
     model.eval()
     
-    # Initialize results list
+    # Initialize results storage
     results = []
     
-    # Get unique speakers in the test set for reference embeddings
-    unique_speakers = set()
-    speaker_references = {}
-    
-    for _, row in test_metadata.iterrows():
-        speaker1_id = row['speaker1_id']
-        speaker2_id = row['speaker2_id']
-        
-        unique_speakers.add(speaker1_id)
-        unique_speakers.add(speaker2_id)
-        
-        # Store first encountered file for each speaker as reference
-        if speaker1_id not in speaker_references:
-            speaker_references[speaker1_id] = row['source1_path']
-        if speaker2_id not in speaker_references:
-            speaker_references[speaker2_id] = row['source2_path']
-    
-    logger.info(f"Found {len(unique_speakers)} unique speakers in test set")
-    
-    # Extract reference embeddings for all speakers
+    # Storage for speaker embeddings
     reference_embeddings = {}
+    test_embeddings = []
+    test_speaker_ids = []
     
-    for speaker_id, audio_path in speaker_references.items():
-        try:
-            waveform, _ = load_audio(audio_path)
-            waveform = waveform.unsqueeze(0).to(device)
-            
-            # Extract embedding using the speaker model from our combined model
-            with torch.no_grad():
-                embedding = model.speaker_model(waveform)
-                reference_embeddings[speaker_id] = embedding.squeeze(0)
-        except Exception as e:
-            logger.error(f"Error extracting reference embedding for {speaker_id}: {e}")
-    
-    # Process each test mixture
+    # Process each batch
     with torch.no_grad():
-        for idx, row in tqdm(test_metadata.iterrows(), total=len(test_metadata), desc="Evaluating test mixtures"):
-            try:
-                # Load mixture
-                mixture_path = row['mixture_path']
-                mixture, _ = load_audio(mixture_path)
+        progress_bar = tqdm(test_loader, desc="Evaluating model")
+        for batch in progress_bar:
+            # Get batch data
+            mixture = batch['mixture'].to(device)
+            source1 = batch['source1'].to(device)
+            source2 = batch['source2'].to(device)
+            
+            # Get speaker IDs
+            speaker1_ids = batch['speaker1_id']
+            speaker2_ids = batch['speaker2_id']
+            
+            # Get mixture IDs
+            mixture_ids = batch['mixture_id']
+            
+            # Forward pass
+            enhanced_sources, source_embeddings = model(mixture)
+            
+            # Process each item in batch
+            for i in range(mixture.shape[0]):
+                mixture_id = mixture_ids[i] if isinstance(mixture_ids, list) else mixture_ids[i].item()
                 
-                # Load reference sources
-                source1_path = row['source1_path']
-                source2_path = row['source2_path']
-                source1, _ = load_audio(source1_path)
-                source2, _ = load_audio(source2_path)
+                # Get ground truth sources for this item
+                ref_src1 = source1[i].cpu().numpy()
+                ref_src2 = source2[i].cpu().numpy()
                 
-                # Get speaker IDs
-                speaker1_id = row['speaker1_id']
-                speaker2_id = row['speaker2_id']
-                mixture_id = row['mixture_id']
+                # Get enhanced sources for this item
+                enh_src1 = enhanced_sources[0][i].cpu().numpy()
+                enh_src2 = enhanced_sources[1][i].cpu().numpy()
                 
-                # Prepare reference embeddings for this mixture
-                mixture_ref_embeddings = torch.stack([
-                    reference_embeddings[speaker1_id],
-                    reference_embeddings[speaker2_id]
-                ]).to(device)
-                
-                # Process mixture through model
-                mixture_tensor = mixture.unsqueeze(0).to(device)
-                enhanced_sources, source_embeddings = model(mixture_tensor, mixture_ref_embeddings)
-                
-                # Convert to numpy for evaluation
-                source1_np = source1.cpu().numpy()
-                source2_np = source2.cpu().numpy()
-                enhanced1_np = enhanced_sources[0].squeeze(0).cpu().numpy()
-                enhanced2_np = enhanced_sources[1].squeeze(0).cpu().numpy()
-                
-                # Make sure they have the same length for evaluation
-                min_length = min(len(source1_np), len(source2_np), len(enhanced1_np), len(enhanced2_np))
-                source1_np = source1_np[:min_length]
-                source2_np = source2_np[:min_length]
-                enhanced1_np = enhanced1_np[:min_length]
-                enhanced2_np = enhanced2_np[:min_length]
-                
-                # Stack for BSS eval
-                reference_sources = np.stack([source1_np, source2_np])
-                estimated_sources = np.stack([enhanced1_np, enhanced2_np])
-                
-                # Calculate separation metrics
-                separation_metrics = evaluate_separation(reference_sources, estimated_sources)
-                
-                # Calculate PESQ for each source
-                pesq1 = calculate_pesq(source1_np, enhanced1_np)
-                pesq2 = calculate_pesq(source2_np, enhanced2_np)
-                pesq_avg = np.nanmean([pesq1, pesq2])
-                
-                # Evaluate speaker identification with pretrained model
-                pretrained_accuracy = None
-                if pretrained_speaker_model is not None:
-                    # Extract embeddings from enhanced sources
-                    enhanced1_tensor = torch.from_numpy(enhanced1_np).unsqueeze(0).to(device)
-                    enhanced2_tensor = torch.from_numpy(enhanced2_np).unsqueeze(0).to(device)
+                # Handle the sample rate mismatch between reference and enhanced sources
+                # Enhanced sources are at 8kHz (from SepFormer) while references are at 16kHz
+                try:
+                    # Get the lengths
+                    enh_len = len(enh_src1)
+                    ref_len = len(ref_src1)
                     
-                    with torch.no_grad():
-                        embedding1 = extract_embeddings(pretrained_speaker_model, enhanced1_tensor)
-                        embedding2 = extract_embeddings(pretrained_speaker_model, enhanced2_tensor)
+                    logger.info(f"Mixture {mixture_id}: ref_len={ref_len}, enh_len={enh_len}")
                     
-                    test_embeddings = [embedding1, embedding2]
-                    ref_embeddings = [
-                        extract_embeddings(pretrained_speaker_model, source1.unsqueeze(0).to(device)),
-                        extract_embeddings(pretrained_speaker_model, source2.unsqueeze(0).to(device))
-                    ]
+                    # If there's a sample rate difference (2x), downsample the reference
+                    # This is a simple approach: take every other sample when ref is 2x longer
+                    if ref_len >= enh_len * 1.9:  # Close to 2x
+                        logger.info(f"Mixture {mixture_id}: Downsampling reference from {ref_len} to {enh_len}")
+                        ref_src1 = ref_src1[::2][:enh_len]  # Take every other sample and trim
+                        ref_src2 = ref_src2[::2][:enh_len]
+                    else:
+                        # Otherwise just make sure they're the same length by trimming
+                        min_len = min(ref_len, enh_len)
+                        ref_src1 = ref_src1[:min_len]
+                        ref_src2 = ref_src2[:min_len]
+                        enh_src1 = enh_src1[:min_len]
+                        enh_src2 = enh_src2[:min_len]
                     
-                    pretrained_accuracy = calculate_speaker_identification_accuracy(
-                        pretrained_speaker_model, test_embeddings, ref_embeddings
+                    # Confirm shapes match after adjustment
+                    assert len(ref_src1) == len(enh_src1), f"Lengths still don't match: {len(ref_src1)} vs {len(enh_src1)}"
+                    
+                    # Stack for evaluation
+                    ref_sources = np.stack([ref_src1, ref_src2])
+                    enh_sources = np.stack([enh_src1, enh_src2])
+                    
+                    # Evaluate separation quality
+                    metrics = evaluate_separation(ref_sources, enh_sources)
+                    
+                    # Store reference embeddings for speaker ID evaluation
+                    spk1_id = speaker1_ids[i]
+                    spk2_id = speaker2_ids[i]
+                    
+                    # Add to reference embeddings if not already present
+                    if spk1_id not in reference_embeddings:
+                        reference_embeddings[spk1_id] = source_embeddings[0][i].detach().clone()
+                    
+                    if spk2_id not in reference_embeddings:
+                        reference_embeddings[spk2_id] = source_embeddings[1][i].detach().clone()
+                    
+                    # Add test embeddings and IDs for later evaluation
+                    test_embeddings.append(source_embeddings[0][i].detach().clone())
+                    test_embeddings.append(source_embeddings[1][i].detach().clone())
+                    test_speaker_ids.append(spk1_id)
+                    test_speaker_ids.append(spk2_id)
+                    
+                    # Save enhanced sources
+                    enhanced_dir = output_dir / "enhanced" / str(mixture_id)
+                    enhanced_dir.mkdir(parents=True, exist_ok=True)
+                    
+                    # Save source 1
+                    save_audio(
+                        torch.tensor(enh_src1).unsqueeze(0),
+                        str(enhanced_dir / "source1.wav")
                     )
-                
-                # Evaluate speaker identification with finetuned model
-                finetuned_accuracy = None
-                if finetuned_speaker_model is not None:
-                    # Extract embeddings from enhanced sources
-                    enhanced1_tensor = torch.from_numpy(enhanced1_np).unsqueeze(0).to(device)
-                    enhanced2_tensor = torch.from_numpy(enhanced2_np).unsqueeze(0).to(device)
                     
-                    with torch.no_grad():
-                        embedding1 = finetuned_speaker_model(enhanced1_tensor)
-                        embedding2 = finetuned_speaker_model(enhanced2_tensor)
-                    
-                    test_embeddings = [embedding1, embedding2]
-                    ref_embeddings = [
-                        finetuned_speaker_model(source1.unsqueeze(0).to(device)),
-                        finetuned_speaker_model(source2.unsqueeze(0).to(device))
-                    ]
-                    
-                    finetuned_accuracy = calculate_speaker_identification_accuracy(
-                        finetuned_speaker_model, test_embeddings, ref_embeddings
+                    # Save source 2
+                    save_audio(
+                        torch.tensor(enh_src2).unsqueeze(0),
+                        str(enhanced_dir / "source2.wav")
                     )
-                
-                # Save enhanced sources
-                enhanced_dir = output_dir / "enhanced" / f"mix_{mixture_id:05d}"
-                enhanced_dir.mkdir(parents=True, exist_ok=True)
-                
-                save_audio(
-                    torch.from_numpy(enhanced1_np).unsqueeze(0),
-                    str(enhanced_dir / "source1.wav")
-                )
-                
-                save_audio(
-                    torch.from_numpy(enhanced2_np).unsqueeze(0),
-                    str(enhanced_dir / "source2.wav")
-                )
-                
-                # Add to results
-                results.append({
-                    'mixture_id': mixture_id,
-                    'speaker1_id': speaker1_id, 
-                    'speaker2_id': speaker2_id,
-                    'SDR': separation_metrics['SDR'],
-                    'SIR': separation_metrics['SIR'],
-                    'SAR': separation_metrics['SAR'],
-                    'PESQ': pesq_avg,
-                    'pretrained_speaker_acc': pretrained_accuracy,
-                    'finetuned_speaker_acc': finetuned_accuracy
-                })
-                
-            except Exception as e:
-                logger.error(f"Error processing mixture {row['mixture_id']}: {e}")
+                    
+                    # Add metrics to results
+                    results.append({
+                        'mixture_id': mixture_id,
+                        'speaker1_id': spk1_id,
+                        'speaker2_id': spk2_id,
+                        'SDR': metrics['SDR'],
+                        'SIR': metrics['SIR'],
+                        'SAR': metrics['SAR'],
+                        'PESQ': metrics.get('PESQ', float('nan')),
+                    })
+                    
+                except Exception as e:
+                    logger.error(f"Error evaluating mixture {mixture_id}: {e}")
+                    results.append({
+                        'mixture_id': mixture_id,
+                        'speaker1_id': speaker1_ids[i],
+                        'speaker2_id': speaker2_ids[i],
+                        'SDR': float('nan'),
+                        'SIR': float('nan'),
+                        'SAR': float('nan'),
+                        'PESQ': float('nan'),
+                    })
     
-    # Convert to DataFrame
+    # Calculate Rank-1 identification accuracy
+    rank1_acc, correct, total = calculate_rank1_accuracy(
+        reference_embeddings, test_embeddings, test_speaker_ids
+    )
+    
+    logger.info(f"Rank-1 identification accuracy: {rank1_acc:.4f} ({correct}/{total})")
+    
+    # Visualize embeddings
+    try:
+        visualize_embeddings(
+            reference_embeddings, 
+            test_embeddings, 
+            test_speaker_ids,
+            output_dir / "embeddings_visualization.png"
+        )
+    except Exception as e:
+        logger.error(f"Error visualizing embeddings: {e}")
+    
+    # Convert results to DataFrame
     results_df = pd.DataFrame(results)
     
     # Calculate average metrics
@@ -309,20 +372,15 @@ def evaluate_enhanced_model(model, test_metadata_file, output_dir,
         'SIR': np.nanmean(results_df['SIR']),
         'SAR': np.nanmean(results_df['SAR']),
         'PESQ': np.nanmean(results_df['PESQ']),
+        'Rank1_Accuracy': rank1_acc,
     }
     
-    if pretrained_speaker_model is not None:
-        avg_metrics['pretrained_speaker_acc'] = np.nanmean(results_df['pretrained_speaker_acc'])
-    
-    if finetuned_speaker_model is not None:
-        avg_metrics['finetuned_speaker_acc'] = np.nanmean(results_df['finetuned_speaker_acc'])
-    
     # Log average metrics
-    logger.info("Average metrics:")
+    logger.info(f"Average metrics:")
     for metric, value in avg_metrics.items():
         logger.info(f"  {metric}: {value:.4f}")
     
-    # Save results to CSV
+    # Save results
     results_df.to_csv(output_dir / "evaluation_results.csv", index=False)
     
     # Save average metrics
@@ -330,19 +388,6 @@ def evaluate_enhanced_model(model, test_metadata_file, output_dir,
         f.write("Average metrics:\n")
         for metric, value in avg_metrics.items():
             f.write(f"{metric}: {value:.4f}\n")
-    
-    # Visualize metrics
-    metrics_to_plot = ['SDR', 'SIR', 'SAR', 'PESQ']
-    
-    for metric in metrics_to_plot:
-        plt.figure(figsize=(10, 6))
-        plt.hist(results_df[metric], bins=20)
-        plt.title(f"{metric} Distribution")
-        plt.xlabel(metric)
-        plt.ylabel("Frequency")
-        plt.grid(True, linestyle='--', alpha=0.7)
-        plt.savefig(output_dir / f"{metric}_distribution.png")
-        plt.close()
     
     return results_df, avg_metrics
 
@@ -353,102 +398,67 @@ def main():
     parser.add_argument("--test_metadata", type=str, required=True,
                         help="Path to test metadata CSV file")
     parser.add_argument("--model_path", type=str, required=True,
-                        help="Path to trained model")
-    parser.add_argument("--output_dir", type=str, required=True,
-                        help="Directory to save evaluation results")
+                        help="Path to trained model checkpoint")
     parser.add_argument("--speaker_model_path", type=str, default=None,
-                        help="Path to pretrained/finetuned speaker model used in training")
-    parser.add_argument("--pretrained_speaker_model_path", type=str, default=None,
-                        help="Path to pretrained speaker model for identification evaluation")
-    parser.add_argument("--finetuned_speaker_model_path", type=str, default=None,
-                        help="Path to finetuned speaker model for identification evaluation")
+                        help="Path to speaker model for rank-1 accuracy evaluation")
     parser.add_argument("--speaker_model_name", type=str, default="wavlm_base_plus",
                         choices=["hubert_large", "wav2vec2_xlsr", "unispeech_sat", "wavlm_base_plus"],
                         help="Name of the speaker model architecture")
-    parser.add_argument("--no_speaker_conditioning", action="store_true",
-                        help="Disable speaker conditioning in the enhancement network")
+    parser.add_argument("--output_dir", type=str, default="results/enhanced_pipeline",
+                        help="Directory to save evaluation results")
+    parser.add_argument("--batch_size", type=int, default=4,
+                        help="Batch size for evaluation")
     
     args = parser.parse_args()
     
-    # Load the model
-    model = load_enhanced_model(
-        speaker_model_path=args.speaker_model_path,
-        speaker_model_name=args.speaker_model_name,
-        use_speaker_conditioning=not args.no_speaker_conditioning
+    # Create test dataset
+    test_dataset = MultiSpeakerMixtureDataset(args.test_metadata)
+    
+    # Create test dataloader
+    test_loader = torch.utils.data.DataLoader(
+        test_dataset,
+        batch_size=args.batch_size,
+        shuffle=False
     )
     
-    # Load saved model weights
+    # Load model
+    model = load_enhanced_model(
+        speaker_model_path=args.speaker_model_path,
+        speaker_model_name=args.speaker_model_name
+    )
+    
+    # Load trained weights
     try:
         model.load_state_dict(torch.load(args.model_path, map_location=device))
-        logger.info(f"Loaded model weights from {args.model_path}")
+        logger.info(f"Successfully loaded model weights from {args.model_path}")
     except Exception as e:
         logger.error(f"Error loading model weights: {e}")
-        return
-    
-    # Load pretrained speaker model if provided
-    pretrained_speaker_model = None
-    if args.pretrained_speaker_model_path:
+        # Try to load with strict=False
         try:
-            pretrained_base_model, _ = load_pretrained_model(args.speaker_model_name)
-            pretrained_speaker_model = SpeakerVerificationModel(
-                pretrained_base_model,
-                embedding_dim=768,
-                num_speakers=100
-            )
-            pretrained_speaker_model.load_state_dict(
-                torch.load(args.pretrained_speaker_model_path, map_location=device),
-                strict=False
-            )
-            pretrained_speaker_model.eval()
-            logger.info(f"Loaded pretrained speaker model from {args.pretrained_speaker_model_path}")
+            model.load_state_dict(torch.load(args.model_path, map_location=device), strict=False)
+            logger.info(f"Loaded model weights with strict=False from {args.model_path}")
         except Exception as e:
-            logger.error(f"Error loading pretrained speaker model: {e}")
-            pretrained_speaker_model = None
-    
-    # Load finetuned speaker model if provided
-    finetuned_speaker_model = None
-    if args.finetuned_speaker_model_path:
-        try:
-            finetuned_base_model, _ = load_pretrained_model(args.speaker_model_name)
-            finetuned_speaker_model = SpeakerVerificationModel(
-                finetuned_base_model,
-                embedding_dim=768,
-                num_speakers=100
-            )
-            
-            # Try to load with LoRA if direct loading fails
-            try:
-                finetuned_speaker_model.load_state_dict(
-                    torch.load(args.finetuned_speaker_model_path, map_location=device)
-                )
-            except:
-                logger.info("Direct loading failed, attempting to load with LoRA...")
-                finetuned_speaker_model = apply_lora(finetuned_speaker_model, args.speaker_model_name)
-                finetuned_speaker_model.load_state_dict(
-                    torch.load(args.finetuned_speaker_model_path, map_location=device),
-                    strict=False
-                )
-                
-            finetuned_speaker_model.eval()
-            logger.info(f"Loaded finetuned speaker model from {args.finetuned_speaker_model_path}")
-        except Exception as e:
-            logger.error(f"Error loading finetuned speaker model: {e}")
-            finetuned_speaker_model = None
+            logger.error(f"Error loading model weights with strict=False: {e}")
+            logger.warning("Proceeding with uninitialized model - results may be poor")
     
     # Evaluate model
     results_df, avg_metrics = evaluate_enhanced_model(
         model,
-        args.test_metadata,
-        args.output_dir,
-        pretrained_speaker_model,
-        finetuned_speaker_model
+        test_loader,
+        args.output_dir
     )
     
     # Print summary
-    logger.info("Evaluation complete!")
-    logger.info("Average metrics:")
-    for metric, value in avg_metrics.items():
-        logger.info(f"  {metric}: {value:.4f}")
+    print("\n" + "="*50)
+    print("EVALUATION RESULTS")
+    print("="*50)
+    print(f"SDR: {avg_metrics['SDR']:.4f} dB")
+    print(f"SIR: {avg_metrics['SIR']:.4f} dB")
+    print(f"SAR: {avg_metrics['SAR']:.4f} dB")
+    print(f"PESQ: {avg_metrics['PESQ']:.4f}")
+    print(f"Rank-1 Accuracy: {avg_metrics['Rank1_Accuracy']:.4f}")
+    print("="*50)
+    print(f"Detailed results saved to {args.output_dir}")
 
 if __name__ == "__main__":
     main() 

@@ -72,32 +72,22 @@ class EnhancedCombinedModel(nn.Module):
         # Whether to use speaker embeddings to condition enhancement
         self.use_speaker_conditioning = use_speaker_conditioning
         
-        # Speaker-conditional enhancement network
-        if use_speaker_conditioning:
-            self.speaker_conditioning = nn.Sequential(
-                nn.Linear(embedding_dim, 512),
-                nn.ReLU(),
-                nn.Dropout(0.2),
-                nn.Linear(512, 256)
-            )
-        
-        # Post-processing enhancement network (improves separated sources)
+        # Simplified enhancement network (trainable part)
         self.enhancement_network = nn.ModuleList([
             nn.Sequential(
-                nn.Conv1d(1, 64, kernel_size=3, padding=1),
+                nn.Conv1d(1, 16, kernel_size=7, padding=3),
+                nn.BatchNorm1d(16),
                 nn.ReLU(),
-                nn.Conv1d(64, 64, kernel_size=3, padding=1),
+                nn.Conv1d(16, 16, kernel_size=7, padding=3),
+                nn.BatchNorm1d(16),
                 nn.ReLU(),
-                nn.Conv1d(64, 1, kernel_size=3, padding=1),
+                nn.Conv1d(16, 1, kernel_size=7, padding=3),
             ) for _ in range(num_speakers)
         ])
         
         # Freeze speaker model weights
         for param in self.speaker_model.parameters():
             param.requires_grad = False
-        
-        # The sepformer model is not a nn.Module, so we don't freeze it here
-        # It will be used for inference only
     
     def forward(self, mixture, reference_embeddings=None):
         """
@@ -119,7 +109,8 @@ class EnhancedCombinedModel(nn.Module):
         
         # Process each mixture separately
         separated_sources_list = []
-        
+        actual_num_sources = 2 # Assume SepFormer separates into 2 sources
+
         for i in range(batch_size):
             # Create a valid temporary WAV file for this batch item
             tmp_mixture_path = tmp_dir / f"tmp_mixture_{i}.wav"
@@ -136,26 +127,45 @@ class EnhancedCombinedModel(nn.Module):
             
             try:
                 # Run separation on this file
-                separated_sources = self.sepformer_wrapper.separate(
+                # Assuming sepformer_wrapper.separate returns [batch, length, num_sources]
+                separated_tensor = self.sepformer_wrapper.separate(
                     str(tmp_mixture_path),
                     save_results=False
                 )
                 
-                # Check the shape and transpose if needed
-                # SepFormer returns [audio_length, num_sources]
-                # We need [num_sources, audio_length]
-                if separated_sources.shape[1] < separated_sources.shape[0]:
-                    # First dimension is likely audio_length, second is num_sources
-                    separated_sources = separated_sources.transpose(0, 1)
+                # Debug the shape
+                logger.info(f"Original separated_tensor shape for item {i}: {separated_tensor.shape}")
                 
-                # Add to our list
-                separated_sources_list.append(separated_sources)
-                
+                # Check consistency
+                if separated_tensor.shape[0] != 1:
+                     logger.warning(f"Expected batch size 1 from separator, got {separated_tensor.shape[0]}. Using first item.")
+                     separated_tensor = separated_tensor[0:1]
+
+                if separated_tensor.shape[2] != actual_num_sources:
+                     logger.warning(f"Expected {actual_num_sources} sources from separator, got {separated_tensor.shape[2]}. Adjusting.")
+                     # Handle potential mismatch, e.g., padding or taking subset
+                     if separated_tensor.shape[2] > actual_num_sources:
+                         separated_tensor = separated_tensor[:, :, :actual_num_sources]
+                     else: # Pad if fewer sources found (though unlikely for SepFormer)
+                         padding = torch.zeros(
+                             (separated_tensor.shape[0], separated_tensor.shape[1], actual_num_sources - separated_tensor.shape[2]),
+                             device=separated_tensor.device, dtype=separated_tensor.dtype
+                         )
+                         separated_tensor = torch.cat([separated_tensor, padding], dim=2)
+
+
+                # Squeeze batch dim and transpose: [length, num_sources] -> [num_sources, length]
+                separated_sources = separated_tensor.squeeze(0).transpose(0, 1)
+                logger.info(f"Processed separated_sources shape for item {i}: {separated_sources.shape}")
+
+                separated_sources_list.append(separated_sources.to('cpu')) # Move to CPU to avoid accumulation on GPU
+
             except Exception as e:
                 logger.error(f"Error processing batch item {i}: {e}")
                 # Create dummy output as fallback (2 sources of same length as input)
                 audio_length = mixture.shape[1]
-                dummy_sources = torch.zeros((2, audio_length), device='cpu')
+                # Create dummy sources on CPU
+                dummy_sources = torch.zeros((actual_num_sources, audio_length), device='cpu')
                 separated_sources_list.append(dummy_sources)
             
             finally:
@@ -166,32 +176,50 @@ class EnhancedCombinedModel(nn.Module):
                     except:
                         pass
         
-        # Find the common shape among all separated sources
-        # Each item in separated_sources_list is [num_sources, audio_length]
-        num_sources = separated_sources_list[0].shape[0]  # Usually 2 for SepFormer
-        
-        # Find the minimum audio length to ensure consistent tensor sizes
-        min_audio_length = min([sources.shape[1] for sources in separated_sources_list])
-        
-        # Initialize tensors for the batch with the minimum length
+        # Debug information
+        shapes = [s.shape for s in separated_sources_list]
+        logger.info(f"Shapes of collected separated sources: {shapes}")
+
+        # Use the assumed number of sources
+        num_sources = actual_num_sources
+        logger.info(f"Using num_sources = {num_sources}")
+
+        # Find the minimum audio length across the batch
+        try:
+            # Ensure all tensors in the list have at least 2 dimensions before checking shape[1]
+            min_audio_length = min([sources.shape[1] for sources in separated_sources_list if sources.dim() >= 2])
+            logger.info(f"Min audio length: {min_audio_length}")
+        except (IndexError, ValueError) as e:
+            logger.error(f"Error finding minimum audio length or empty list: {e}. Defaulting.")
+            # Find a reasonable default, maybe based on mixture input length or a fixed value
+            min_audio_length = mixture.shape[1] if mixture.shape[1] > 0 else 8000 # Fallback
+
+        # Initialize tensors for the batch with the minimum length and correct num_sources
         # Shape: [num_sources, batch_size, min_audio_length]
         separated_sources_batch = torch.zeros(
             (num_sources, batch_size, min_audio_length),
-            device=device
+            device=device # Initialize directly on the target device
         )
         
         # Fill in the batch tensor (trimming if necessary)
         for i, separated_sources in enumerate(separated_sources_list):
-            for j in range(num_sources):
-                # Handle potential shape issues
-                if j < separated_sources.shape[0] and min_audio_length <= separated_sources.shape[1]:
-                    # Ensure we're slicing correctly based on shape
-                    separated_sources_batch[j, i] = separated_sources[j, :min_audio_length].to(device)
-                else:
-                    # In case of shape mismatch, use zeros
-                    logger.warning(f"Shape mismatch for source {j} in batch item {i}. Filling with zeros.")
-                    separated_sources_batch[j, i] = torch.zeros(min_audio_length, device=device)
-        
+             # Ensure the separated_sources tensor is valid before processing
+            if separated_sources.dim() >= 2 and separated_sources.shape[0] == num_sources:
+                current_len = separated_sources.shape[1]
+                len_to_copy = min(current_len, min_audio_length)
+                try:
+                    # Move source tensor to the target device before assignment
+                    separated_sources_batch[:, i, :len_to_copy] = separated_sources[:, :len_to_copy].to(device)
+                    # If the source was shorter, the rest remains zero padded
+                except Exception as e:
+                     logger.error(f"Error copying data for batch item {i}: {e}")
+                     # Ensure the slice remains zeros in case of error
+                     separated_sources_batch[:, i, :] = 0
+            else:
+                logger.warning(f"Skipping invalid separated_sources shape {separated_sources.shape} for batch item {i}. Filling with zeros.")
+                separated_sources_batch[:, i, :] = 0
+
+
         # Extract speaker embeddings for each separated source
         source_embeddings = []
         for i in range(num_sources):
@@ -202,64 +230,6 @@ class EnhancedCombinedModel(nn.Module):
             with torch.no_grad():
                 embeddings = self.speaker_model(source_audio)
                 source_embeddings.append(embeddings)
-        
-        # If reference embeddings are provided, match sources to references
-        if reference_embeddings is not None:
-            # Calculate similarity matrix: [batch_size, num_sources, num_refs]
-            similarities = torch.zeros(
-                (batch_size, num_sources, reference_embeddings.shape[0]),
-                device=device
-            )
-            
-            for i in range(batch_size):
-                for j in range(num_sources):
-                    for k in range(reference_embeddings.shape[0]):
-                        # Compute cosine similarity
-                        similarities[i, j, k] = F.cosine_similarity(
-                            source_embeddings[j][i].unsqueeze(0),
-                            reference_embeddings[k].unsqueeze(0),
-                            dim=1
-                        )
-            
-            # For each item in the batch, decide optimal assignment
-            assignments = []
-            for i in range(batch_size):
-                # For 2 speakers, use a simple comparison of total similarity
-                if num_sources == 2 and reference_embeddings.shape[0] == 2:
-                    sim_1 = similarities[i, 0, 0] + similarities[i, 1, 1]
-                    sim_2 = similarities[i, 0, 1] + similarities[i, 1, 0]
-                    
-                    if sim_1 >= sim_2:
-                        assignments.append([0, 1])  # Default order
-                    else:
-                        assignments.append([1, 0])  # Swapped order
-                else:
-                    # For more speakers, use a more sophisticated assignment algorithm
-                    # Not implemented in this version
-                    assignments.append(list(range(num_sources)))
-            
-            # Reorder sources and embeddings based on assignments
-            reordered_sources = torch.zeros_like(separated_sources_batch)
-            reordered_embeddings = []
-            
-            for i in range(batch_size):
-                for j in range(num_sources):
-                    # Get source index for this reference
-                    source_idx = assignments[i].index(j)
-                    reordered_sources[j, i] = separated_sources_batch[source_idx, i]
-            
-            # Update separated sources with reordered version
-            separated_sources_batch = reordered_sources
-            
-            # Also reorder embeddings
-            for i in range(num_sources):
-                batch_embeddings = []
-                for j in range(batch_size):
-                    source_idx = assignments[j].index(i)
-                    batch_embeddings.append(source_embeddings[source_idx][j])
-                reordered_embeddings.append(torch.stack(batch_embeddings))
-            
-            source_embeddings = reordered_embeddings
         
         # Apply enhancement network to each source
         enhanced_sources = []
@@ -413,8 +383,13 @@ def train_enhanced_model(model, train_loader, val_loader, output_dir,
             enhanced_sources, _ = model(mixture)
             
             # Calculate loss
-            loss1 = waveform_loss(enhanced_sources[0], source1)
-            loss2 = waveform_loss(enhanced_sources[1], source2)
+            # Trim target sources to match the length of enhanced sources
+            enhanced_len = enhanced_sources[0].shape[1]
+            source1_trimmed = source1[:, :enhanced_len]
+            source2_trimmed = source2[:, :enhanced_len]
+
+            loss1 = waveform_loss(enhanced_sources[0], source1_trimmed)
+            loss2 = waveform_loss(enhanced_sources[1], source2_trimmed)
             loss = loss1 + loss2
             
             # Backward pass
@@ -447,8 +422,13 @@ def train_enhanced_model(model, train_loader, val_loader, output_dir,
                 enhanced_sources, _ = model(mixture)
                 
                 # Calculate loss
-                loss1 = waveform_loss(enhanced_sources[0], source1)
-                loss2 = waveform_loss(enhanced_sources[1], source2)
+                # Trim target sources to match the length of enhanced sources
+                enhanced_len = enhanced_sources[0].shape[1]
+                source1_trimmed = source1[:, :enhanced_len]
+                source2_trimmed = source2[:, :enhanced_len]
+                
+                loss1 = waveform_loss(enhanced_sources[0], source1_trimmed)
+                loss2 = waveform_loss(enhanced_sources[1], source2_trimmed)
                 loss = loss1 + loss2
                 
                 # Update progress bar
