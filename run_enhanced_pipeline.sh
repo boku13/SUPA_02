@@ -67,7 +67,7 @@ python src/combined_pipeline/evaluate_enhanced_pipeline.py \
 
 # Step 6: Generate comparison report
 echo "Step 6: Generating comparison report..."
-python src/combined_pipeline/generate_report.py \
+python src/combined_pipeline/generate_comparision_report.py \
     --baseline_results results/sepformer_baseline/evaluation_results.csv \
     --enhanced_results results/combined_pipeline/evaluation_results.csv \
     --output_dir results/comparison \

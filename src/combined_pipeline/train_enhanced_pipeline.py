@@ -115,19 +115,33 @@ class EnhancedCombinedModel(nn.Module):
             # Create a valid temporary WAV file for this batch item
             tmp_mixture_path = tmp_dir / f"tmp_mixture_{i}.wav"
             
-            # Ensure the tensor is on CPU and properly shaped for torchaudio
-            mix_cpu = mixture[i].cpu().unsqueeze(0)
+            # Get the single mixture for this batch item
+            mixture_item = mixture[i] # Shape: [audio_length]
             
-            # Save to temporary file
+            # --- Resample to 8kHz ---
+            target_sr = 8000
+            original_sr = 16000 # Assuming input mixture is always 16kHz
+            
+            if original_sr != target_sr:
+                # Ensure it's on CPU for resampling if needed by torchaudio backend
+                resampled_mixture = torchaudio.functional.resample(mixture_item.cpu(), original_sr, target_sr)
+            else:
+                resampled_mixture = mixture_item.cpu() # Still move to CPU if already 8kHz
+                
+            # Ensure shape is [1, audio_length] for saving
+            resampled_mixture = resampled_mixture.unsqueeze(0) if resampled_mixture.dim() == 1 else resampled_mixture
+            
+            # Save the *resampled* mixture to temporary file
             torchaudio.save(
                 str(tmp_mixture_path),  # Convert to string for torchaudio
-                mix_cpu,
-                16000  # Default sample rate for SepFormer
+                resampled_mixture,
+                target_sr  # Save at 8kHz
             )
             
             try:
-                # Run separation on this file
+                # Run separation on the 8kHz file
                 # Assuming sepformer_wrapper.separate returns [batch, length, num_sources]
+                # The output of sepformer (when run on 8kHz) should be 8kHz
                 separated_tensor = self.sepformer_wrapper.separate(
                     str(tmp_mixture_path),
                     save_results=False

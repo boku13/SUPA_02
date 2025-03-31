@@ -1,6 +1,6 @@
 Average metrics:
-SDR: -10.1024
-SIR: 8.0073
-SAR: -9.1902
-PESQ: 1.0495
+SDR: -9.7826
+SIR: 8.2454
+SAR: -8.8994
+PESQ: 1.2304
 Rank1_Accuracy: 0.1550

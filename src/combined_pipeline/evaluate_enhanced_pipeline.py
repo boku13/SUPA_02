@@ -256,40 +256,44 @@ def evaluate_enhanced_model(model, test_loader, output_dir, speaker_model=None):
                 enh_src1 = enhanced_sources[0][i].cpu().numpy()
                 enh_src2 = enhanced_sources[1][i].cpu().numpy()
                 
-                # Handle the sample rate mismatch between reference and enhanced sources
-                # Enhanced sources are at 8kHz (from SepFormer) while references are at 16kHz
+                # Enhanced sources are now expected to be 8kHz (due to changes in forward pass)
+                # Reference sources are loaded at 16kHz
                 try:
-                    # Get the lengths
-                    enh_len = len(enh_src1)
-                    ref_len = len(ref_src1)
+                    original_sr = 16000
+                    target_sr = 8000
                     
-                    logger.info(f"Mixture {mixture_id}: ref_len={ref_len}, enh_len={enh_len}")
+                    # Resample reference sources to target_sr (8kHz)
+                    ref_src1_tensor = torch.from_numpy(ref_src1).to('cpu') # Move to CPU if needed
+                    ref_src2_tensor = torch.from_numpy(ref_src2).to('cpu')
                     
-                    # If there's a sample rate difference (2x), downsample the reference
-                    # This is a simple approach: take every other sample when ref is 2x longer
-                    if ref_len >= enh_len * 1.9:  # Close to 2x
-                        logger.info(f"Mixture {mixture_id}: Downsampling reference from {ref_len} to {enh_len}")
-                        ref_src1 = ref_src1[::2][:enh_len]  # Take every other sample and trim
-                        ref_src2 = ref_src2[::2][:enh_len]
-                    else:
-                        # Otherwise just make sure they're the same length by trimming
-                        min_len = min(ref_len, enh_len)
-                        ref_src1 = ref_src1[:min_len]
-                        ref_src2 = ref_src2[:min_len]
-                        enh_src1 = enh_src1[:min_len]
-                        enh_src2 = enh_src2[:min_len]
+                    ref_src1_resampled = torchaudio.functional.resample(ref_src1_tensor, original_sr, target_sr)
+                    ref_src2_resampled = torchaudio.functional.resample(ref_src2_tensor, original_sr, target_sr)
+                    
+                    # Convert enhanced sources to tensors for length alignment
+                    enh_src1_tensor = torch.from_numpy(enh_src1).to('cpu')
+                    enh_src2_tensor = torch.from_numpy(enh_src2).to('cpu')
+                    
+                    # Align lengths by trimming to the minimum length
+                    min_len = min(ref_src1_resampled.shape[0], enh_src1_tensor.shape[0])
+                    
+                    ref_src1_aligned = ref_src1_resampled[:min_len].numpy()
+                    ref_src2_aligned = ref_src2_resampled[:min_len].numpy()
+                    enh_src1_aligned = enh_src1_tensor[:min_len].numpy()
+                    enh_src2_aligned = enh_src2_tensor[:min_len].numpy()
+                    
+                    logger.info(f"Mixture {mixture_id}: Aligned length={min_len} at {target_sr}Hz")
                     
                     # Confirm shapes match after adjustment
-                    assert len(ref_src1) == len(enh_src1), f"Lengths still don't match: {len(ref_src1)} vs {len(enh_src1)}"
+                    assert len(ref_src1_aligned) == len(enh_src1_aligned), f"Lengths still don't match: {len(ref_src1_aligned)} vs {len(enh_src1_aligned)}"
                     
-                    # Stack for evaluation
-                    ref_sources = np.stack([ref_src1, ref_src2])
-                    enh_sources = np.stack([enh_src1, enh_src2])
+                    # Stack for evaluation (using aligned 8kHz versions)
+                    ref_sources = np.stack([ref_src1_aligned, ref_src2_aligned])
+                    enh_sources = np.stack([enh_src1_aligned, enh_src2_aligned])
                     
-                    # Evaluate separation quality
-                    metrics = evaluate_separation(ref_sources, enh_sources)
+                    # Evaluate separation quality (pass target_sr for PESQ calculation)
+                    metrics = evaluate_separation(ref_sources, enh_sources, sample_rate=target_sr)
                     
-                    # Store reference embeddings for speaker ID evaluation
+                    # Store reference embeddings for speaker ID evaluation (embeddings are extracted from 8kHz sources)
                     spk1_id = speaker1_ids[i]
                     spk2_id = speaker2_ids[i]
                     
@@ -312,13 +316,13 @@ def evaluate_enhanced_model(model, test_loader, output_dir, speaker_model=None):
                     
                     # Save source 1
                     save_audio(
-                        torch.tensor(enh_src1).unsqueeze(0),
+                        torch.tensor(enh_src1_aligned).unsqueeze(0),
                         str(enhanced_dir / "source1.wav")
                     )
                     
                     # Save source 2
                     save_audio(
-                        torch.tensor(enh_src2).unsqueeze(0),
+                        torch.tensor(enh_src2_aligned).unsqueeze(0),
                         str(enhanced_dir / "source2.wav")
                     )
                     

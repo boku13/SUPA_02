@@ -1,0 +1,1209 @@
+2025-03-31 22:45:13,911 - utils - INFO - Using device: cuda
+2025-03-31 22:45:18,594 - speaker_verification.pretrained_eval - INFO - Initial pretrained_eval device setting: cuda
+2025-03-31 22:45:19,289 - speaker_verification.finetune - INFO - Using device: cuda
+2025-03-31 22:45:19,483 - speechbrain.utils.quirks - INFO - Applied quirks (see `speechbrain.utils.quirks`): [allow_tf32, disable_jit_profiling]
+2025-03-31 22:45:19,483 - speechbrain.utils.quirks - INFO - Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speech_enhancement\sepformer.py:12: UserWarning: Module 'speechbrain.pretrained' was deprecated, redirecting to 'speechbrain.inference'. Please update your script. This is a change from SpeechBrain 1.0. See: https://github.com/speechbrain/speechbrain/releases/tag/v1.0.0
+  from speechbrain.pretrained import SepformerSeparation
+2025-03-31 22:45:19,548 - train_enhanced_pipeline - INFO - PESQ module is available for evaluation
+2025-03-31 22:45:19,549 - __main__ - INFO - PESQ module is available for evaluation
+2025-03-31 22:45:19,558 - train_enhanced_pipeline - INFO - Loaded dataset with 200 mixtures
+2025-03-31 22:45:19,559 - speaker_verification.pretrained_eval - INFO - Using device for model loading: cuda
+2025-03-31 22:45:19,559 - speaker_verification.pretrained_eval - INFO - CUDA is available. Device count: 1
+2025-03-31 22:45:19,559 - speaker_verification.pretrained_eval - INFO - Loading pretrained model: microsoft/wavlm-base-plus
+2025-03-31 22:45:23,459 - speaker_verification.pretrained_eval - INFO - Model moved to cuda
+2025-03-31 22:45:23,461 - train_enhanced_pipeline - INFO - Loading speaker model weights from models/speaker_verification/wavlm_ft/best_model.pt
+2025-03-31 22:45:24,174 - train_enhanced_pipeline - INFO - Direct loading failed, attempting to load with LoRA...
+2025-03-31 22:45:24,423 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,424 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,424 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,425 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.0.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,425 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,426 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,426 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,426 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.1.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,426 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,426 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,426 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,427 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.2.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,427 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,427 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,427 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,427 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.3.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,427 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,428 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,428 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,428 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.4.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,428 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,428 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,428 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,428 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.5.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,429 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,429 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,429 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,429 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.6.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,429 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,429 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,429 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,430 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.7.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,430 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,430 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.8.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.9.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,431 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,432 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.10.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,432 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.k_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,432 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.v_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,432 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.q_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,432 - speaker_verification.finetune - INFO - Explicitly initialized base_model.model.backbone.encoder.layers.11.attention.out_proj.lora_B.default.weight with random values
+2025-03-31 22:45:24,437 - speaker_verification.finetune - INFO - Trainable params: 1179648 || All params: 95638384 || Trainable%: 1.2334%
+2025-03-31 22:45:24,955 - speech_enhancement.sepformer - INFO - Loading SepFormer model...
+2025-03-31 22:45:24,956 - speech_enhancement.sepformer - INFO - Downloading model files from speechbrain/sepformer-wham
+2025-03-31 22:45:24,957 - speechbrain.utils.fetching - INFO - Fetch hyperparams.yaml: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\speechbrain\utils\fetching.py:151: UserWarning: Using SYMLINK strategy on Windows for fetching potentially requires elevated privileges and is not recommended. See `LocalStrategy` documentation.
+  warnings.warn(
+2025-03-31 22:45:25,261 - speechbrain.utils.fetching - INFO - Fetch custom.py: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\speech\lib\site-packages\speechbrain\utils\parameter_transfer.py:234: UserWarning: Requested Pretrainer collection using symlinks on Windows. This might not work; see `LocalStrategy` documentation. Consider unsetting `collect_in` in Pretrainer to avoid symlinking altogether.
+  warnings.warn(
+2025-03-31 22:45:25,959 - speechbrain.utils.fetching - INFO - Fetch masknet.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:26,226 - speechbrain.utils.fetching - INFO - Fetch encoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:26,562 - speechbrain.utils.fetching - INFO - Fetch decoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:26,857 - speech_enhancement.sepformer - INFO - Loading the model into memory
+2025-03-31 22:45:26,857 - speechbrain.utils.fetching - INFO - Fetch hyperparams.yaml: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:27,129 - speechbrain.utils.fetching - INFO - Fetch custom.py: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:27,602 - speechbrain.utils.fetching - INFO - Fetch masknet.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:27,898 - speechbrain.utils.fetching - INFO - Fetch encoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:28,161 - speechbrain.utils.fetching - INFO - Fetch decoder.ckpt: Fetching from HuggingFace Hub 'speechbrain/sepformer-wham' if not cached
+2025-03-31 22:45:28,424 - speechbrain.utils.parameter_transfer - INFO - Loading pretrained files for: masknet, encoder, decoder
+2025-03-31 22:45:28,822 - speech_enhancement.sepformer - INFO - Testing if model is loaded properly
+2025-03-31 22:45:28,822 - speech_enhancement.sepformer - INFO - SepFormer model loaded successfully
+2025-03-31 22:45:29,751 - __main__ - INFO - Successfully loaded model weights from models/combined_pipeline/best_model.pt
+Evaluating model:   0%|          | 0/100 [00:00<?, ?it/s]2025-03-31 22:45:29,980 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:31,829 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:31,830 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:31,867 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:31,911 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:31,911 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:32,379 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:32,379 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:32,379 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:33,013 - __main__ - INFO - Mixture 0: Aligned length=80000 at 8000Hz
+C:\Users\SQREAM\Desktop\semester_six\speech_understanding_assignment_02\src\speech_enhancement\evaluation.py:65: FutureWarning: mir_eval.separation.bss_eval_sources
+	Deprecated as of mir_eval version 0.8.
+	It will be removed in mir_eval version 0.9.
+  sdr, sir, sar, perm = mir_eval.separation.bss_eval_sources(
+2025-03-31 22:45:33,866 - __main__ - INFO - Mixture 1: Aligned length=80000 at 8000Hz
+Evaluating model:   1%|1         | 1/100 [00:04<07:48,  4.74s/it]2025-03-31 22:45:34,522 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:34,566 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:34,567 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:35,086 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:35,136 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:35,137 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:35,598 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:35,598 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:35,598 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:35,809 - __main__ - INFO - Mixture 2: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:36,708 - __main__ - INFO - Mixture 3: Aligned length=80000 at 8000Hz
+Evaluating model:   2%|2         | 2/100 [00:07<05:57,  3.64s/it]2025-03-31 22:45:37,410 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:37,455 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:37,455 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:37,952 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:38,012 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:38,012 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:38,465 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:38,465 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:38,465 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:38,694 - __main__ - INFO - Mixture 4: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:39,498 - __main__ - INFO - Mixture 5: Aligned length=80000 at 8000Hz
+Evaluating model:   3%|3         | 3/100 [00:10<05:11,  3.22s/it]2025-03-31 22:45:40,135 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:40,175 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:40,175 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:40,663 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:40,700 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:40,700 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:41,176 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:41,176 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:41,176 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:41,383 - __main__ - INFO - Mixture 6: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:42,108 - __main__ - INFO - Mixture 7: Aligned length=80000 at 8000Hz
+Evaluating model:   4%|4         | 4/100 [00:12<04:47,  2.99s/it]2025-03-31 22:45:42,774 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:42,814 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:42,814 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:43,310 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:43,363 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:43,363 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:43,824 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:43,824 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:43,824 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:44,034 - __main__ - INFO - Mixture 8: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:44,687 - __main__ - INFO - Mixture 9: Aligned length=80000 at 8000Hz
+Evaluating model:   5%|5         | 5/100 [00:15<04:28,  2.83s/it]2025-03-31 22:45:45,294 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:45,349 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:45,349 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:45,853 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:45,913 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:45,914 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:46,368 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:46,368 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:46,368 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:46,580 - __main__ - INFO - Mixture 10: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:47,342 - __main__ - INFO - Mixture 11: Aligned length=80000 at 8000Hz
+Evaluating model:   6%|6         | 6/100 [00:18<04:23,  2.81s/it]2025-03-31 22:45:48,090 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:48,148 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:48,148 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:48,629 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:48,688 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:48,688 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:49,144 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:49,144 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:49,144 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:49,353 - __main__ - INFO - Mixture 12: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:50,173 - __main__ - INFO - Mixture 13: Aligned length=80000 at 8000Hz
+Evaluating model:   7%|7         | 7/100 [00:21<04:26,  2.86s/it]2025-03-31 22:45:51,046 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:51,092 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:51,092 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:51,631 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:51,683 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:51,683 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:52,145 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:52,146 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:52,146 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:52,355 - __main__ - INFO - Mixture 14: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:53,029 - __main__ - INFO - Mixture 15: Aligned length=80000 at 8000Hz
+Evaluating model:   8%|8         | 8/100 [00:23<04:17,  2.80s/it]2025-03-31 22:45:53,693 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:53,737 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:53,737 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:54,227 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:54,276 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:54,276 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:54,740 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:54,740 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:54,741 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:54,947 - __main__ - INFO - Mixture 16: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:55,743 - __main__ - INFO - Mixture 17: Aligned length=80000 at 8000Hz
+Evaluating model:   9%|9         | 9/100 [00:26<04:13,  2.78s/it]2025-03-31 22:45:56,443 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:56,483 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:56,483 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:56,975 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:57,019 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:57,019 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:45:57,490 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:45:57,491 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:45:57,491 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:45:57,744 - __main__ - INFO - Mixture 18: Aligned length=80000 at 8000Hz
+2025-03-31 22:45:58,639 - __main__ - INFO - Mixture 19: Aligned length=80000 at 8000Hz
+Evaluating model:  10%|#         | 10/100 [00:29<04:12,  2.81s/it]2025-03-31 22:45:59,326 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:45:59,373 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:45:59,373 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:45:59,860 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:45:59,906 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:45:59,906 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:00,375 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:00,375 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:00,375 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:00,591 - __main__ - INFO - Mixture 20: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:01,407 - __main__ - INFO - Mixture 21: Aligned length=80000 at 8000Hz
+Evaluating model:  11%|#1        | 11/100 [00:32<04:09,  2.81s/it]2025-03-31 22:46:02,116 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:02,161 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:02,161 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:02,677 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:02,733 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:02,733 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:03,193 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:03,193 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:03,193 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:03,548 - __main__ - INFO - Mixture 22: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:04,585 - __main__ - INFO - Mixture 23: Aligned length=80000 at 8000Hz
+Evaluating model:  12%|#2        | 12/100 [00:35<04:15,  2.91s/it]2025-03-31 22:46:05,259 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:05,296 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:05,296 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:05,887 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:05,949 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:05,950 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:06,403 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:06,403 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:06,403 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:06,611 - __main__ - INFO - Mixture 24: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:07,284 - __main__ - INFO - Mixture 25: Aligned length=80000 at 8000Hz
+Evaluating model:  13%|#3        | 13/100 [00:38<04:09,  2.87s/it]2025-03-31 22:46:08,063 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:08,119 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:08,119 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:08,599 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:08,643 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:08,643 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:09,114 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:09,114 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:09,114 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:09,320 - __main__ - INFO - Mixture 26: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:09,900 - __main__ - INFO - Mixture 27: Aligned length=80000 at 8000Hz
+Evaluating model:  14%|#4        | 14/100 [00:41<04:05,  2.85s/it]2025-03-31 22:46:11,482 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:11,548 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:11,548 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:12,179 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:12,240 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:12,240 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:12,695 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:12,696 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:12,696 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:12,935 - __main__ - INFO - Mixture 28: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:14,143 - __main__ - INFO - Mixture 29: Aligned length=80000 at 8000Hz
+Evaluating model:  15%|#5        | 15/100 [00:45<04:37,  3.27s/it]2025-03-31 22:46:15,134 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:15,198 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:15,198 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:15,905 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:15,961 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:15,962 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:16,421 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:16,421 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:16,421 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:16,630 - __main__ - INFO - Mixture 30: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:17,451 - __main__ - INFO - Mixture 31: Aligned length=80000 at 8000Hz
+Evaluating model:  16%|#6        | 16/100 [00:48<04:30,  3.22s/it]2025-03-31 22:46:18,204 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:18,255 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:18,255 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:18,768 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:18,818 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:18,818 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:19,284 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:19,284 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:19,285 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:19,495 - __main__ - INFO - Mixture 32: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:20,271 - __main__ - INFO - Mixture 33: Aligned length=80000 at 8000Hz
+Evaluating model:  17%|#7        | 17/100 [00:51<04:26,  3.21s/it]2025-03-31 22:46:21,452 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:21,518 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:21,518 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:22,178 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:22,227 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:22,228 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:22,695 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:22,695 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:22,695 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:22,905 - __main__ - INFO - Mixture 34: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:23,871 - __main__ - INFO - Mixture 35: Aligned length=80000 at 8000Hz
+Evaluating model:  18%|#8        | 18/100 [00:54<04:20,  3.18s/it]2025-03-31 22:46:24,488 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:24,536 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:24,537 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:25,019 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:25,062 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:25,062 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:25,535 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:25,535 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:25,535 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:25,754 - __main__ - INFO - Mixture 36: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:26,926 - __main__ - INFO - Mixture 37: Aligned length=80000 at 8000Hz
+Evaluating model:  19%|#9        | 19/100 [00:57<04:16,  3.17s/it]2025-03-31 22:46:27,645 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:27,686 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:27,687 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:28,354 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:28,421 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:28,421 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:28,871 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:28,871 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:28,871 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:29,081 - __main__ - INFO - Mixture 38: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:29,692 - __main__ - INFO - Mixture 39: Aligned length=80000 at 8000Hz
+Evaluating model:  20%|##        | 20/100 [01:00<04:01,  3.02s/it]2025-03-31 22:46:30,302 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:30,352 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:30,353 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:30,838 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:30,896 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:30,896 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:31,357 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:31,357 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:31,358 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:31,650 - __main__ - INFO - Mixture 40: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:32,840 - __main__ - INFO - Mixture 41: Aligned length=80000 at 8000Hz
+Evaluating model:  21%|##1       | 21/100 [01:03<04:04,  3.10s/it]2025-03-31 22:46:33,583 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:33,642 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:33,643 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:34,336 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:34,404 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:34,405 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:34,854 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:34,854 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:34,854 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:35,062 - __main__ - INFO - Mixture 42: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:35,754 - __main__ - INFO - Mixture 43: Aligned length=80000 at 8000Hz
+Evaluating model:  22%|##2       | 22/100 [01:06<03:58,  3.06s/it]2025-03-31 22:46:36,557 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:36,608 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:36,608 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:37,090 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:37,133 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:37,133 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:37,606 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:37,606 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:37,606 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:37,812 - __main__ - INFO - Mixture 44: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:38,617 - __main__ - INFO - Mixture 45: Aligned length=80000 at 8000Hz
+Evaluating model:  23%|##3       | 23/100 [01:09<03:53,  3.03s/it]2025-03-31 22:46:39,517 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:39,561 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:39,562 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:40,046 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:40,093 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:40,093 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:40,562 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:40,562 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:40,562 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:40,771 - __main__ - INFO - Mixture 46: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:41,645 - __main__ - INFO - Mixture 47: Aligned length=80000 at 8000Hz
+Evaluating model:  24%|##4       | 24/100 [01:12<03:46,  2.99s/it]2025-03-31 22:46:42,401 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:42,448 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:42,448 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:42,933 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:42,986 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:42,986 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:43,449 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:43,450 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:43,450 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:43,686 - __main__ - INFO - Mixture 48: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:44,486 - __main__ - INFO - Mixture 49: Aligned length=80000 at 8000Hz
+Evaluating model:  25%|##5       | 25/100 [01:15<03:38,  2.91s/it]2025-03-31 22:46:45,126 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:45,181 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:45,182 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:45,660 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:45,717 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:45,717 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:46,178 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:46,178 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:46,179 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:46,433 - __main__ - INFO - Mixture 50: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:47,261 - __main__ - INFO - Mixture 51: Aligned length=80000 at 8000Hz
+Evaluating model:  26%|##6       | 26/100 [01:18<03:33,  2.89s/it]2025-03-31 22:46:47,977 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:48,024 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:48,024 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:48,508 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:48,553 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:48,553 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:49,025 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:49,026 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:49,026 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:49,237 - __main__ - INFO - Mixture 52: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:49,926 - __main__ - INFO - Mixture 53: Aligned length=80000 at 8000Hz
+Evaluating model:  27%|##7       | 27/100 [01:20<03:26,  2.83s/it]2025-03-31 22:46:50,655 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:50,695 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:50,696 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:51,187 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:51,239 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:51,239 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:51,709 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:51,709 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:51,709 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:51,918 - __main__ - INFO - Mixture 54: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:52,851 - __main__ - INFO - Mixture 55: Aligned length=80000 at 8000Hz
+Evaluating model:  28%|##8       | 28/100 [01:23<03:25,  2.85s/it]2025-03-31 22:46:53,577 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:53,634 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:53,634 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:54,124 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:54,184 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:54,184 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:54,646 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:54,646 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:54,647 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:54,857 - __main__ - INFO - Mixture 56: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:55,596 - __main__ - INFO - Mixture 57: Aligned length=80000 at 8000Hz
+Evaluating model:  29%|##9       | 29/100 [01:26<03:24,  2.88s/it]2025-03-31 22:46:56,527 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:56,577 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:56,577 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:46:57,066 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:46:57,126 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:46:57,126 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:46:57,590 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:46:57,590 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:46:57,591 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:46:57,844 - __main__ - INFO - Mixture 58: Aligned length=80000 at 8000Hz
+2025-03-31 22:46:58,989 - __main__ - INFO - Mixture 59: Aligned length=80000 at 8000Hz
+Evaluating model:  30%|###       | 30/100 [01:29<03:29,  2.99s/it]2025-03-31 22:46:59,770 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:46:59,834 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:46:59,834 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:00,526 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:00,579 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:00,579 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:01,046 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:01,047 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:01,047 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:01,258 - __main__ - INFO - Mixture 60: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:01,987 - __main__ - INFO - Mixture 61: Aligned length=80000 at 8000Hz
+Evaluating model:  31%|###1      | 31/100 [01:33<03:28,  3.03s/it]2025-03-31 22:47:02,887 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:02,936 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:02,936 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:03,424 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:03,479 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:03,479 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:03,955 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:03,955 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:03,955 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:04,166 - __main__ - INFO - Mixture 62: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:04,783 - __main__ - INFO - Mixture 63: Aligned length=80000 at 8000Hz
+Evaluating model:  32%|###2      | 32/100 [01:35<03:15,  2.88s/it]2025-03-31 22:47:05,426 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:05,483 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:05,483 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:05,977 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:06,041 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:06,042 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:06,514 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:06,514 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:06,514 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:06,735 - __main__ - INFO - Mixture 64: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:07,504 - __main__ - INFO - Mixture 65: Aligned length=80000 at 8000Hz
+Evaluating model:  33%|###3      | 33/100 [01:38<03:13,  2.88s/it]2025-03-31 22:47:08,314 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:08,368 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:08,368 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:08,858 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:08,905 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:08,905 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:09,402 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:09,402 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:09,402 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:09,614 - __main__ - INFO - Mixture 66: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:10,297 - __main__ - INFO - Mixture 67: Aligned length=80000 at 8000Hz
+Evaluating model:  34%|###4      | 34/100 [01:41<03:11,  2.89s/it]2025-03-31 22:47:11,234 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:11,288 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:11,288 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:11,777 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:11,824 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:11,825 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:12,310 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:12,310 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:12,310 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:12,534 - __main__ - INFO - Mixture 68: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:13,440 - __main__ - INFO - Mixture 69: Aligned length=80000 at 8000Hz
+Evaluating model:  35%|###5      | 35/100 [01:44<03:07,  2.89s/it]2025-03-31 22:47:14,105 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:14,153 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:14,153 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:14,642 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:14,689 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:14,690 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:15,176 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:15,176 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:15,176 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:15,388 - __main__ - INFO - Mixture 70: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:16,126 - __main__ - INFO - Mixture 71: Aligned length=80000 at 8000Hz
+Evaluating model:  36%|###6      | 36/100 [01:46<03:00,  2.82s/it]2025-03-31 22:47:16,764 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:16,811 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:16,811 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:17,310 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:17,365 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:17,366 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:17,843 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:17,843 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:17,844 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:18,153 - __main__ - INFO - Mixture 72: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:18,922 - __main__ - INFO - Mixture 73: Aligned length=80000 at 8000Hz
+Evaluating model:  37%|###7      | 37/100 [01:49<02:58,  2.83s/it]2025-03-31 22:47:19,607 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:19,654 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:19,654 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:20,146 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:20,192 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:20,192 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:20,677 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:20,677 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:20,677 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:20,890 - __main__ - INFO - Mixture 74: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:21,521 - __main__ - INFO - Mixture 75: Aligned length=80000 at 8000Hz
+Evaluating model:  38%|###8      | 38/100 [01:52<02:51,  2.77s/it]2025-03-31 22:47:22,238 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:22,282 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:22,282 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:22,775 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:22,819 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:22,819 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:23,325 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:23,325 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:23,325 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:23,930 - __main__ - INFO - Mixture 76: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:24,770 - __main__ - INFO - Mixture 77: Aligned length=80000 at 8000Hz
+Evaluating model:  39%|###9      | 39/100 [01:55<02:55,  2.88s/it]2025-03-31 22:47:25,385 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:25,429 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:25,429 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:25,928 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:25,972 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:25,972 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:26,489 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:26,489 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:26,489 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:26,700 - __main__ - INFO - Mixture 78: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:27,344 - __main__ - INFO - Mixture 79: Aligned length=80000 at 8000Hz
+Evaluating model:  40%|####      | 40/100 [01:58<02:47,  2.79s/it]2025-03-31 22:47:27,974 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:28,030 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:28,030 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:28,515 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:28,576 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:28,576 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:29,059 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:29,059 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:29,059 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:29,273 - __main__ - INFO - Mixture 80: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:29,969 - __main__ - INFO - Mixture 81: Aligned length=80000 at 8000Hz
+Evaluating model:  41%|####1     | 41/100 [02:00<02:41,  2.74s/it]2025-03-31 22:47:30,589 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:30,629 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:30,629 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:31,129 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:31,181 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:31,181 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:31,678 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:31,678 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:31,678 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:31,892 - __main__ - INFO - Mixture 82: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:32,609 - __main__ - INFO - Mixture 83: Aligned length=80000 at 8000Hz
+Evaluating model:  42%|####2     | 42/100 [02:03<02:38,  2.73s/it]2025-03-31 22:47:33,308 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:33,365 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:33,365 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:33,850 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:33,903 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:33,903 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:34,395 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:34,396 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:34,396 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:34,609 - __main__ - INFO - Mixture 84: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:35,203 - __main__ - INFO - Mixture 85: Aligned length=80000 at 8000Hz
+Evaluating model:  43%|####3     | 43/100 [02:06<02:32,  2.67s/it]2025-03-31 22:47:35,843 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:35,901 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:35,902 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:36,384 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:36,427 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:36,427 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:36,956 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:36,957 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:36,957 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:37,170 - __main__ - INFO - Mixture 86: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:38,108 - __main__ - INFO - Mixture 87: Aligned length=80000 at 8000Hz
+Evaluating model:  44%|####4     | 44/100 [02:08<02:34,  2.75s/it]2025-03-31 22:47:38,780 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:38,827 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:38,827 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:39,322 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:39,381 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:39,381 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:39,870 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:39,871 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:39,871 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:40,087 - __main__ - INFO - Mixture 88: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:40,766 - __main__ - INFO - Mixture 89: Aligned length=80000 at 8000Hz
+Evaluating model:  45%|####5     | 45/100 [02:11<02:30,  2.73s/it]2025-03-31 22:47:41,444 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:41,493 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:41,493 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:41,990 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:42,043 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:42,043 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:42,550 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:42,551 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:42,551 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:42,767 - __main__ - INFO - Mixture 90: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:43,411 - __main__ - INFO - Mixture 91: Aligned length=80000 at 8000Hz
+Evaluating model:  46%|####6     | 46/100 [02:14<02:26,  2.70s/it]2025-03-31 22:47:44,101 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:44,153 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:44,153 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:44,643 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:44,690 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:44,690 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:45,210 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:45,210 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:45,210 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:45,534 - __main__ - INFO - Mixture 92: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:46,439 - __main__ - INFO - Mixture 93: Aligned length=80000 at 8000Hz
+Evaluating model:  47%|####6     | 47/100 [02:17<02:27,  2.79s/it]2025-03-31 22:47:47,083 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:47,127 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:47,127 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:47,622 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:47,666 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:47,666 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:48,174 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:48,174 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:48,174 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:48,388 - __main__ - INFO - Mixture 94: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:49,034 - __main__ - INFO - Mixture 95: Aligned length=80000 at 8000Hz
+Evaluating model:  48%|####8     | 48/100 [02:19<02:22,  2.74s/it]2025-03-31 22:47:49,727 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:49,776 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:49,776 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:50,288 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:50,338 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:50,338 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:50,842 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:50,843 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:50,843 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:51,060 - __main__ - INFO - Mixture 96: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:51,687 - __main__ - INFO - Mixture 97: Aligned length=80000 at 8000Hz
+Evaluating model:  49%|####9     | 49/100 [02:22<02:17,  2.69s/it]2025-03-31 22:47:52,287 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:52,330 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:52,330 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:52,832 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:52,876 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:52,877 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:53,396 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:53,396 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:53,396 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:53,639 - __main__ - INFO - Mixture 98: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:54,341 - __main__ - INFO - Mixture 99: Aligned length=80000 at 8000Hz
+Evaluating model:  50%|#####     | 50/100 [02:25<02:19,  2.79s/it]2025-03-31 22:47:55,312 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:55,362 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:55,363 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:55,861 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:55,910 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:55,911 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:56,412 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:56,412 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:56,413 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:56,626 - __main__ - INFO - Mixture 100: Aligned length=80000 at 8000Hz
+2025-03-31 22:47:57,339 - __main__ - INFO - Mixture 101: Aligned length=80000 at 8000Hz
+Evaluating model:  51%|#####1    | 51/100 [02:28<02:14,  2.75s/it]2025-03-31 22:47:57,964 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:47:58,027 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:47:58,027 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:47:58,505 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:47:58,550 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:47:58,551 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:47:59,071 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:47:59,071 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:47:59,071 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:47:59,298 - __main__ - INFO - Mixture 102: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:00,201 - __main__ - INFO - Mixture 103: Aligned length=80000 at 8000Hz
+Evaluating model:  52%|#####2    | 52/100 [02:31<02:14,  2.79s/it]2025-03-31 22:48:00,863 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:00,915 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:00,915 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:01,408 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:01,458 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:01,458 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:01,972 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:01,972 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:01,972 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:02,196 - __main__ - INFO - Mixture 104: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:02,893 - __main__ - INFO - Mixture 105: Aligned length=80000 at 8000Hz
+Evaluating model:  53%|#####3    | 53/100 [02:33<02:11,  2.80s/it]2025-03-31 22:48:03,658 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:03,706 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:03,706 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:04,218 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:04,284 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:04,284 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:04,776 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:04,776 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:04,776 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:04,992 - __main__ - INFO - Mixture 106: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:05,620 - __main__ - INFO - Mixture 107: Aligned length=80000 at 8000Hz
+Evaluating model:  54%|#####4    | 54/100 [02:36<02:05,  2.72s/it]2025-03-31 22:48:06,213 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:06,259 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:06,259 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:06,755 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:06,815 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:06,815 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:07,325 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:07,325 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:07,325 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:07,564 - __main__ - INFO - Mixture 108: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:08,322 - __main__ - INFO - Mixture 109: Aligned length=80000 at 8000Hz
+Evaluating model:  55%|#####5    | 55/100 [02:39<02:03,  2.74s/it]2025-03-31 22:48:09,011 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:09,058 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:09,059 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:09,572 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:09,633 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:09,633 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:10,139 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:10,139 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:10,140 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:10,357 - __main__ - INFO - Mixture 110: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:11,015 - __main__ - INFO - Mixture 111: Aligned length=80000 at 8000Hz
+Evaluating model:  56%|#####6    | 56/100 [02:41<02:00,  2.75s/it]2025-03-31 22:48:11,775 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:11,822 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:11,822 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:12,314 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:12,358 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:12,358 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:12,872 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:12,872 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:12,873 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:13,089 - __main__ - INFO - Mixture 112: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:13,837 - __main__ - INFO - Mixture 113: Aligned length=80000 at 8000Hz
+Evaluating model:  57%|#####6    | 57/100 [02:44<01:58,  2.76s/it]2025-03-31 22:48:14,564 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:14,609 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:14,609 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:15,110 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:15,169 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:15,169 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:15,698 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:15,698 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:15,698 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:15,919 - __main__ - INFO - Mixture 114: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:16,619 - __main__ - INFO - Mixture 115: Aligned length=80000 at 8000Hz
+Evaluating model:  58%|#####8    | 58/100 [02:47<01:56,  2.77s/it]2025-03-31 22:48:17,368 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:17,416 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:17,416 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:17,926 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:17,972 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:17,972 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:18,488 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:18,488 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:18,489 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:18,708 - __main__ - INFO - Mixture 116: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:19,335 - __main__ - INFO - Mixture 117: Aligned length=80000 at 8000Hz
+Evaluating model:  59%|#####8    | 59/100 [02:50<01:52,  2.73s/it]2025-03-31 22:48:20,009 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:20,061 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:20,061 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:20,558 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:20,607 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:20,607 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:21,114 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:21,115 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:21,115 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:21,345 - __main__ - INFO - Mixture 118: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:22,250 - __main__ - INFO - Mixture 119: Aligned length=80000 at 8000Hz
+Evaluating model:  60%|######    | 60/100 [02:53<01:50,  2.77s/it]2025-03-31 22:48:22,845 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:22,890 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:22,891 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:23,400 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:23,449 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:23,450 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:23,978 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:23,979 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:23,979 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:24,203 - __main__ - INFO - Mixture 120: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:25,013 - __main__ - INFO - Mixture 121: Aligned length=80000 at 8000Hz
+Evaluating model:  61%|######1   | 61/100 [02:55<01:49,  2.80s/it]2025-03-31 22:48:25,721 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:25,776 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:25,776 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:26,273 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:26,336 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:26,336 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:26,859 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:26,859 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:26,859 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:27,081 - __main__ - INFO - Mixture 122: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:27,750 - __main__ - INFO - Mixture 123: Aligned length=80000 at 8000Hz
+Evaluating model:  62%|######2   | 62/100 [02:58<01:47,  2.82s/it]2025-03-31 22:48:28,605 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:28,655 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:28,655 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:29,157 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:29,217 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:29,217 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:29,711 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:29,712 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:29,712 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:29,933 - __main__ - INFO - Mixture 124: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:30,681 - __main__ - INFO - Mixture 125: Aligned length=80000 at 8000Hz
+Evaluating model:  63%|######3   | 63/100 [03:01<01:44,  2.81s/it]2025-03-31 22:48:31,383 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:31,436 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:31,436 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:31,943 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:31,987 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:31,987 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:32,502 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:32,503 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:32,503 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:32,719 - __main__ - INFO - Mixture 126: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:33,395 - __main__ - INFO - Mixture 127: Aligned length=80000 at 8000Hz
+Evaluating model:  64%|######4   | 64/100 [03:04<01:39,  2.75s/it]2025-03-31 22:48:33,991 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:34,036 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:34,036 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:34,546 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:34,593 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:34,594 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:35,159 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:35,159 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:35,159 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:35,402 - __main__ - INFO - Mixture 128: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:36,103 - __main__ - INFO - Mixture 129: Aligned length=80000 at 8000Hz
+Evaluating model:  65%|######5   | 65/100 [03:07<01:36,  2.77s/it]2025-03-31 22:48:36,800 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:36,849 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:36,849 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:37,353 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:37,410 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:37,410 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:37,912 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:37,912 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:37,913 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:38,132 - __main__ - INFO - Mixture 130: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:38,733 - __main__ - INFO - Mixture 131: Aligned length=80000 at 8000Hz
+Evaluating model:  66%|######6   | 66/100 [03:09<01:32,  2.72s/it]2025-03-31 22:48:39,420 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:39,474 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:39,475 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:39,969 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:40,014 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:40,015 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:40,558 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:40,558 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:40,558 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:40,780 - __main__ - INFO - Mixture 132: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:41,479 - __main__ - INFO - Mixture 133: Aligned length=80000 at 8000Hz
+Evaluating model:  67%|######7   | 67/100 [03:12<01:31,  2.77s/it]2025-03-31 22:48:42,294 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:42,335 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:42,335 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:42,845 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:42,895 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:42,895 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:43,432 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:43,432 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:43,432 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:43,659 - __main__ - INFO - Mixture 134: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:44,652 - __main__ - INFO - Mixture 135: Aligned length=80000 at 8000Hz
+Evaluating model:  68%|######8   | 68/100 [03:15<01:32,  2.88s/it]2025-03-31 22:48:45,442 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:45,502 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:45,502 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:46,135 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:46,192 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:46,192 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:46,720 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:46,720 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:46,721 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:46,942 - __main__ - INFO - Mixture 136: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:47,565 - __main__ - INFO - Mixture 137: Aligned length=80000 at 8000Hz
+Evaluating model:  69%|######9   | 69/100 [03:18<01:28,  2.85s/it]2025-03-31 22:48:48,220 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:48,263 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:48,263 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:48,771 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:48,830 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:48,830 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:49,337 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:49,338 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:49,338 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:49,967 - __main__ - INFO - Mixture 138: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:50,768 - __main__ - INFO - Mixture 139: Aligned length=80000 at 8000Hz
+Evaluating model:  70%|#######   | 70/100 [03:21<01:29,  2.98s/it]2025-03-31 22:48:51,504 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:51,564 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:51,564 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:52,054 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:52,110 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:52,111 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:52,633 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:52,633 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:52,633 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:52,856 - __main__ - INFO - Mixture 140: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:53,522 - __main__ - INFO - Mixture 141: Aligned length=80000 at 8000Hz
+Evaluating model:  71%|#######1  | 71/100 [03:24<01:23,  2.89s/it]2025-03-31 22:48:54,202 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:54,254 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:54,254 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:54,756 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:54,811 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:54,811 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:55,313 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:55,313 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:55,313 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:55,532 - __main__ - INFO - Mixture 142: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:56,147 - __main__ - INFO - Mixture 143: Aligned length=80000 at 8000Hz
+Evaluating model:  72%|#######2  | 72/100 [03:27<01:18,  2.82s/it]2025-03-31 22:48:56,843 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:56,900 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:56,900 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:48:57,415 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:48:57,470 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:48:57,470 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:48:58,016 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:48:58,016 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:48:58,016 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:48:58,241 - __main__ - INFO - Mixture 144: Aligned length=80000 at 8000Hz
+2025-03-31 22:48:59,078 - __main__ - INFO - Mixture 145: Aligned length=80000 at 8000Hz
+Evaluating model:  73%|#######3  | 73/100 [03:30<01:17,  2.87s/it]2025-03-31 22:48:59,833 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:48:59,884 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:48:59,884 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:00,396 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:00,456 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:00,457 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:00,990 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:00,990 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:00,990 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:01,218 - __main__ - INFO - Mixture 146: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:01,983 - __main__ - INFO - Mixture 147: Aligned length=80000 at 8000Hz
+Evaluating model:  74%|#######4  | 74/100 [03:32<01:14,  2.87s/it]2025-03-31 22:49:02,684 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:02,729 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:02,729 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:03,246 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:03,291 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:03,291 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:03,824 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:03,824 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:03,824 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:04,080 - __main__ - INFO - Mixture 148: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:04,991 - __main__ - INFO - Mixture 149: Aligned length=80000 at 8000Hz
+Evaluating model:  75%|#######5  | 75/100 [03:35<01:12,  2.88s/it]2025-03-31 22:49:05,611 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:05,662 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:05,662 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:06,159 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:06,210 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:06,210 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:06,744 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:06,744 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:06,744 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:06,967 - __main__ - INFO - Mixture 150: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:07,575 - __main__ - INFO - Mixture 151: Aligned length=80000 at 8000Hz
+Evaluating model:  76%|#######6  | 76/100 [03:38<01:06,  2.79s/it]2025-03-31 22:49:08,180 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:08,238 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:08,238 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:08,743 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:08,799 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:08,800 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:09,353 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:09,353 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:09,353 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:09,575 - __main__ - INFO - Mixture 152: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:10,140 - __main__ - INFO - Mixture 153: Aligned length=80000 at 8000Hz
+Evaluating model:  77%|#######7  | 77/100 [03:41<01:02,  2.74s/it]2025-03-31 22:49:10,783 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:10,830 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:10,830 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:11,336 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:11,391 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:11,391 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:11,914 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:11,914 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:11,915 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:12,171 - __main__ - INFO - Mixture 154: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:13,016 - __main__ - INFO - Mixture 155: Aligned length=80000 at 8000Hz
+Evaluating model:  78%|#######8  | 78/100 [03:44<01:02,  2.84s/it]2025-03-31 22:49:13,869 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:13,914 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:13,914 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:14,418 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:14,466 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:14,466 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:14,994 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:14,994 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:14,994 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:15,216 - __main__ - INFO - Mixture 156: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:16,021 - __main__ - INFO - Mixture 157: Aligned length=80000 at 8000Hz
+Evaluating model:  79%|#######9  | 79/100 [03:46<00:59,  2.83s/it]2025-03-31 22:49:16,684 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:16,731 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:16,731 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:17,236 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:17,290 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:17,291 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:17,813 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:17,813 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:17,813 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:18,037 - __main__ - INFO - Mixture 158: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:18,750 - __main__ - INFO - Mixture 159: Aligned length=80000 at 8000Hz
+Evaluating model:  80%|########  | 80/100 [03:49<00:55,  2.80s/it]2025-03-31 22:49:19,409 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:19,455 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:19,455 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:19,973 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:20,024 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:20,024 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:20,559 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:20,560 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:20,560 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:20,786 - __main__ - INFO - Mixture 160: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:21,575 - __main__ - INFO - Mixture 161: Aligned length=80000 at 8000Hz
+Evaluating model:  81%|########1 | 81/100 [03:52<00:53,  2.80s/it]2025-03-31 22:49:22,191 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:22,234 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:22,234 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:22,756 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:22,800 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:22,800 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:23,355 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:23,355 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:23,355 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:23,579 - __main__ - INFO - Mixture 162: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:24,284 - __main__ - INFO - Mixture 163: Aligned length=80000 at 8000Hz
+Evaluating model:  82%|########2 | 82/100 [03:55<00:51,  2.84s/it]2025-03-31 22:49:25,150 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:25,204 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:25,205 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:25,868 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:25,927 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:25,927 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:26,444 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:26,445 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:26,445 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:26,668 - __main__ - INFO - Mixture 164: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:27,389 - __main__ - INFO - Mixture 165: Aligned length=80000 at 8000Hz
+Evaluating model:  83%|########2 | 83/100 [03:58<00:48,  2.88s/it]2025-03-31 22:49:28,122 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:28,174 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:28,174 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:28,700 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:28,758 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:28,759 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:29,323 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:29,323 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:29,324 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:29,545 - __main__ - INFO - Mixture 166: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:30,257 - __main__ - INFO - Mixture 167: Aligned length=80000 at 8000Hz
+Evaluating model:  84%|########4 | 84/100 [04:01<00:45,  2.86s/it]2025-03-31 22:49:30,947 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:30,993 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:30,993 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:31,515 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:31,578 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:31,578 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:32,104 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:32,104 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:32,104 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:32,329 - __main__ - INFO - Mixture 168: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:33,145 - __main__ - INFO - Mixture 169: Aligned length=80000 at 8000Hz
+Evaluating model:  85%|########5 | 85/100 [04:04<00:42,  2.86s/it]2025-03-31 22:49:33,799 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:33,841 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:33,841 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:34,359 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:34,418 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:34,418 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:34,950 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:34,951 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:34,951 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:35,176 - __main__ - INFO - Mixture 170: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:35,915 - __main__ - INFO - Mixture 171: Aligned length=80000 at 8000Hz
+Evaluating model:  86%|########6 | 86/100 [04:06<00:40,  2.87s/it]2025-03-31 22:49:36,689 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:36,738 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:36,738 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:37,270 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:37,333 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:37,333 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:37,871 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:37,871 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:37,872 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:38,140 - __main__ - INFO - Mixture 172: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:38,940 - __main__ - INFO - Mixture 173: Aligned length=80000 at 8000Hz
+Evaluating model:  87%|########7 | 87/100 [04:09<00:37,  2.89s/it]2025-03-31 22:49:39,611 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:39,665 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:39,665 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:40,156 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:40,201 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:40,201 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:40,730 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:40,730 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:40,730 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:40,955 - __main__ - INFO - Mixture 174: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:41,720 - __main__ - INFO - Mixture 175: Aligned length=80000 at 8000Hz
+Evaluating model:  88%|########8 | 88/100 [04:12<00:34,  2.85s/it]2025-03-31 22:49:42,399 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:42,455 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:42,455 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:42,961 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:43,015 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:43,016 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:43,587 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:43,587 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:43,587 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:43,821 - __main__ - INFO - Mixture 176: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:44,512 - __main__ - INFO - Mixture 177: Aligned length=80000 at 8000Hz
+Evaluating model:  89%|########9 | 89/100 [04:15<00:31,  2.83s/it]2025-03-31 22:49:45,169 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:45,215 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:45,215 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:45,741 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:45,793 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:45,794 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:46,329 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:46,329 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:46,329 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:46,552 - __main__ - INFO - Mixture 178: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:47,283 - __main__ - INFO - Mixture 179: Aligned length=80000 at 8000Hz
+Evaluating model:  90%|######### | 90/100 [04:18<00:28,  2.82s/it]2025-03-31 22:49:47,969 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:48,027 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:48,027 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:48,538 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:48,593 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:48,593 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:49,133 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:49,133 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:49,133 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:49,380 - __main__ - INFO - Mixture 180: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:50,500 - __main__ - INFO - Mixture 181: Aligned length=80000 at 8000Hz
+Evaluating model:  91%|#########1| 91/100 [04:21<00:26,  2.96s/it]2025-03-31 22:49:51,232 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:51,287 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:51,287 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:51,918 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:51,963 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:51,964 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:52,478 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:52,478 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:52,478 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:52,708 - __main__ - INFO - Mixture 182: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:53,321 - __main__ - INFO - Mixture 183: Aligned length=80000 at 8000Hz
+Evaluating model:  92%|#########2| 92/100 [04:24<00:23,  2.91s/it]2025-03-31 22:49:54,056 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:54,105 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:54,105 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:54,617 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:54,675 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:54,675 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:55,272 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:55,272 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:55,272 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:55,507 - __main__ - INFO - Mixture 184: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:56,171 - __main__ - INFO - Mixture 185: Aligned length=80000 at 8000Hz
+Evaluating model:  93%|#########3| 93/100 [04:27<00:20,  2.88s/it]2025-03-31 22:49:56,860 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:56,914 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:56,915 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:49:57,434 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:49:57,501 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:49:57,502 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:49:57,991 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:49:57,992 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:49:57,992 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:49:58,222 - __main__ - INFO - Mixture 186: Aligned length=80000 at 8000Hz
+2025-03-31 22:49:58,998 - __main__ - INFO - Mixture 187: Aligned length=80000 at 8000Hz
+Evaluating model:  94%|#########3| 94/100 [04:29<00:17,  2.90s/it]2025-03-31 22:49:59,799 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:49:59,852 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:49:59,852 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:50:00,359 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:50:00,415 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:50:00,415 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:50:01,009 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:50:01,009 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:50:01,009 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:50:01,238 - __main__ - INFO - Mixture 188: Aligned length=80000 at 8000Hz
+2025-03-31 22:50:02,026 - __main__ - INFO - Mixture 189: Aligned length=80000 at 8000Hz
+Evaluating model:  95%|#########5| 95/100 [04:32<00:14,  2.93s/it]2025-03-31 22:50:02,781 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:50:02,826 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:50:02,826 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:50:03,340 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:50:03,411 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:50:03,412 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:50:03,933 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:50:03,934 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:50:03,934 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:50:04,158 - __main__ - INFO - Mixture 190: Aligned length=80000 at 8000Hz
+2025-03-31 22:50:04,847 - __main__ - INFO - Mixture 191: Aligned length=80000 at 8000Hz
+Evaluating model:  96%|#########6| 96/100 [04:35<00:11,  2.91s/it]2025-03-31 22:50:05,664 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:50:05,716 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:50:05,717 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:50:06,219 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:50:06,268 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:50:06,268 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:50:06,836 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:50:06,836 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:50:06,836 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:50:07,070 - __main__ - INFO - Mixture 192: Aligned length=80000 at 8000Hz
+2025-03-31 22:50:07,874 - __main__ - INFO - Mixture 193: Aligned length=80000 at 8000Hz
+Evaluating model:  97%|#########7| 97/100 [04:39<00:08,  2.98s/it]2025-03-31 22:50:08,812 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:50:08,881 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:50:08,881 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:50:09,524 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:50:09,593 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:50:09,593 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:50:10,097 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:50:10,097 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:50:10,097 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:50:10,333 - __main__ - INFO - Mixture 194: Aligned length=80000 at 8000Hz
+2025-03-31 22:50:11,363 - __main__ - INFO - Mixture 195: Aligned length=80000 at 8000Hz
+Evaluating model:  98%|#########8| 98/100 [04:42<00:06,  3.16s/it]2025-03-31 22:50:12,387 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:50:12,450 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:50:12,450 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:50:13,117 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:50:13,187 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:50:13,187 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:50:13,681 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:50:13,681 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:50:13,681 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:50:14,009 - __main__ - INFO - Mixture 196: Aligned length=80000 at 8000Hz
+2025-03-31 22:50:15,443 - __main__ - INFO - Mixture 197: Aligned length=80000 at 8000Hz
+Evaluating model:  99%|#########9| 99/100 [04:46<00:03,  3.48s/it]2025-03-31 22:50:16,629 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_0.wav
+2025-03-31 22:50:16,694 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 0: torch.Size([1, 80000, 2])
+2025-03-31 22:50:16,694 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 0: torch.Size([2, 80000])
+2025-03-31 22:50:17,339 - speech_enhancement.sepformer - INFO - Separating sources from tmp\tmp_mixture_1.wav
+2025-03-31 22:50:17,398 - train_enhanced_pipeline - INFO - Original separated_tensor shape for item 1: torch.Size([1, 80000, 2])
+2025-03-31 22:50:17,398 - train_enhanced_pipeline - INFO - Processed separated_sources shape for item 1: torch.Size([2, 80000])
+2025-03-31 22:50:17,990 - train_enhanced_pipeline - INFO - Shapes of collected separated sources: [torch.Size([2, 80000]), torch.Size([2, 80000])]
+2025-03-31 22:50:17,990 - train_enhanced_pipeline - INFO - Using num_sources = 2
+2025-03-31 22:50:17,990 - train_enhanced_pipeline - INFO - Min audio length: 80000
+2025-03-31 22:50:18,228 - __main__ - INFO - Mixture 198: Aligned length=80000 at 8000Hz
+2025-03-31 22:50:19,287 - __main__ - INFO - Mixture 199: Aligned length=80000 at 8000Hz
+Evaluating model: 100%|##########| 100/100 [04:50<00:00,  3.49s/it]Evaluating model: 100%|##########| 100/100 [04:50<00:00,  2.90s/it]
+2025-03-31 22:50:20,351 - __main__ - INFO - Rank-1 identification accuracy: 0.1550 (62/400)
+2025-03-31 22:50:25,485 - __main__ - INFO - Average metrics:
+2025-03-31 22:50:25,485 - __main__ - INFO -   SDR: -9.7826
+2025-03-31 22:50:25,485 - __main__ - INFO -   SIR: 8.2454
+2025-03-31 22:50:25,485 - __main__ - INFO -   SAR: -8.8994
+2025-03-31 22:50:25,485 - __main__ - INFO -   PESQ: 1.2304
+2025-03-31 22:50:25,485 - __main__ - INFO -   Rank1_Accuracy: 0.1550
+
+==================================================
+EVALUATION RESULTS
+==================================================
+SDR: -9.7826 dB
+SIR: 8.2454 dB
+SAR: -8.8994 dB
+PESQ: 1.2304
+Rank-1 Accuracy: 0.1550
+==================================================
+Detailed results saved to results/enhanced_pipeline
